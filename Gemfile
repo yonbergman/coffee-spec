@@ -25,3 +25,5 @@ gem 'controller_support'
 gem 'enumify'
 
 gem 'quiet_assets'
+
+gem 'rails_12factor', group: :production
