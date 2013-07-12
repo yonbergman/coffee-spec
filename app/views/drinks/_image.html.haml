@@ -1,5 +1,7 @@
 .drink{:class => drink.kind}
-  .liquid{:class => [drink.kind, drink.strength, drink.tea_type]}
+  .liquid{:class => [drink.kind, drink.strength, drink.tea_type, drink.water_type, drink.soda_type]}
+  - if drink.tea?
+    .teabag
   - if has_milk(drink)
     .milk{:class => [drink.milk_type, drink.milk_amount]}
   - if has_sugar(drink)
@@ -8,6 +10,11 @@
         .sugar{:class => [drink.sugar_type]}
       - if has_half_sugar(drink)
         .sugar.half{:class => [drink.sugar_type]}
+  - if is_sparkling(drink)
+    .bubbles
+      .bubble.bubble-1
+      .bubble.bubble-2
+      .bubble.bubble-3
 
   - if has_handle(drink)
     .handle

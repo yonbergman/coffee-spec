@@ -1,6 +1,7 @@
 module DrinkHelper
   def drink_text(drink)
-    "A #{drink.kind}"
+    DrinkTexter.new(drink).text
+
   end
 
   def has_handle(drink)
@@ -8,14 +9,20 @@ module DrinkHelper
   end
 
   def has_milk(drink)
-    drink.milk_amount.present?
+    drink.milk_amount.present? and drink.milk_amount != 'none'
   end
 
   def has_sugar(drink)
-    drink.sugar_amount > 0
+    drink.sugar_amount.present? and drink.sugar_amount != 0
   end
 
   def has_half_sugar(drink)
+    return false unless has_sugar(drink)
     drink.sugar_amount / drink.sugar_amount.to_i > 1
   end
+
+  def is_sparkling(drink)
+    drink.soda? or (drink.water? and drink.water_type == 'sparkling')
+  end
+
 end

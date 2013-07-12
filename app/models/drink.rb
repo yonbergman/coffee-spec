@@ -4,19 +4,23 @@ class Drink < ActiveRecord::Base
   belongs_to :page
   has_one :user, :through => :page
 
-  enum :kind, [:coffee, :tea, :water]
-  enum_accessor :milk_amount, [:a_bit, :a_third, :a_lot]
+  enum :kind, [:coffee, :tea, :water, :soda]
+  enum_accessor :milk_amount, [:none, :a_bit, :a_third, :a_lot]
   enum_accessor :milk_type, [:regular, :slim, :soy]
-  enum_accessor :sugar_amount, [0.5, 1, 1.5, 2, 2.5]
+  enum_accessor :sugar_amount, [0, 0.5, 1, 1.5, 2, 2.5]
   enum_accessor :sugar_type, [:regular, :brown, :artificial_sweetner]
   enum_accessor :strength, [:normal, :light, :strong]
   enum_accessor :tea_type, [:earl_grey, :green, :herbal]
 
+  enum_accessor :water_type, [:still, :sparkling]
+  enum_accessor :soda_type, [:coke, :sprite, :fanta]
+
 
   TYPES = {
-      :coffee => [:milk_amount, :milk_type, :sugar_amount, :sugar_type, :strength],
-      :tea => [:sugar_amount, :sugar_type, :tea_type],
-      :water => [],
+      :coffee => [:strength, :milk_amount, :milk_type, :sugar_amount, :sugar_type],
+      :tea => [:tea_type, :sugar_amount, :sugar_type],
+      :water => [:water_type],
+      :soda => [:soda_type],
   }
 
   scope :ordered, lambda { order(:id) }
@@ -37,6 +41,7 @@ class Drink < ActiveRecord::Base
 
   def sugar_amount
     s = super()
+    return nil if s.blank?
     if s.to_i == s.to_f
       s.to_i
     else
@@ -45,7 +50,7 @@ class Drink < ActiveRecord::Base
   end
 
   def sugar_amount=(val)
-    super(nil) if val.nil?
+    return super(nil) if val.blank?
     super(val.to_f)
   end
 

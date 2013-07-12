@@ -1,0 +1,26 @@
+= form_for([@page,@drink]) do |f|
+
+  - if @drink.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@drink.errors.count, "error")
+        prohibited this drink from being saved:
+      %ul
+        - @drink.errors.full_messages.each do |msg|
+          %li= msg
+  = render 'drinks/image', :drink => @drink
+  .field
+    = f.label :name
+    = f.text_field :name, :placeholder => 'Person\'s name'
+  .field
+    = f.label :kind
+    = f.collection_select :kind, Drink::KINDS, :to_s, :titleize
+  - Drink::TYPES[@drink.kind].each do |field|
+    .field
+      = f.label field
+      = f.select field, select_options(drink_options(field))
+
+  .actions
+    = f.submit 'Save'
+    - if @preview
+      #preview Preview Mode • Click Save to update drink

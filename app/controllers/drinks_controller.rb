@@ -11,9 +11,11 @@ class DrinksController < ApplicationController
 
   def new
     @drink = current_page.drinks.build
+    live_preview
   end
 
   def edit
+    live_preview
   end
 
   def create
@@ -43,7 +45,7 @@ class DrinksController < ApplicationController
 
   def preview
     @drink = Page.last.drinks.build(drink_params)
-    render :partial => 'drinks/image', :locals => {:drink => @drink}, :layout => false
+    render 'drinks/edit', :locals => {:drink => @drink}, :layout => false
   end
 
   private
@@ -56,4 +58,11 @@ class DrinksController < ApplicationController
     def drink_params
       params.require(:drink).permit([:name, :kind] + Drink.stored_attributes[:drink_attributes])
     end
+
+  def live_preview
+    if params.include? :drink
+      @preview = true
+      @drink.assign_attributes(drink_params)
+    end
+  end
 end
