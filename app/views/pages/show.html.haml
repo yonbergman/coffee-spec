@@ -1,0 +1,21 @@
+%p#notice= notice
+%h2= @page.name
+.drinks
+  %ul
+    - if @page.drinks.empty?
+      %li
+        You have no drinks yet
+        = link_to 'Create a drink now', new_page_drink_path(@page)
+    - else
+      - @page.drinks.each do |drink|
+        %li
+          = render 'drinks/drink', :drink => drink
+      %li
+        = link_to 'Create a drink', new_page_drink_path(@page)
+
+.links
+  = link_to 'Edit', edit_page_path(@page)
+  %span •
+  = link_to 'Delete', @page, :method => :delete, :data => {:confirm => 'Are you sure?'}
+  %span •
+  = link_to 'Back', pages_path

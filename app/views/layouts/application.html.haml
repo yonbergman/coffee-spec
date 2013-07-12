@@ -1,0 +1,26 @@
+!!! 5
+%html.no-js{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %title Coffee.spec
+    %meta{:name => "description", :content => ""}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+    %link{:href => "/favicon.ico", :rel => "shortcut icon"}
+    = csrf_meta_tags
+    = stylesheet_link_tag :application
+    = javascript_include_tag :application
+  %body
+    .content
+      %header
+        %h1 Coffee.spec
+        .user-dashboard
+          - if user_signed_in?
+            %span
+              Hello
+              %strong= current_user.name
+              %span •
+            = link_to 'Sign Out', sign_out_path
+          - else
+            = link_to 'Sign In', sign_in_path
+
+      = yield

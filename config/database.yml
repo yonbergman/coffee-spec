@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: cspec
+  host: localhost
+  pool: 5
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  database: cspec_test
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: coffeespec
+  pool: 5

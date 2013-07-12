@@ -1,0 +1,10 @@
+%h2 Your Pages
+%ul
+  - @pages.each do |page|
+    %li
+      = link_to page do
+        = page.name
+        %span •
+        %span= pluralize(page.drinks.count, 'drink')
+  %li
+    = link_to 'New Page', new_page_path
