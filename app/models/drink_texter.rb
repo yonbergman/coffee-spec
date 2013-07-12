@@ -19,7 +19,7 @@ class DrinkTexter
 
   def coffee_text
     t = ''
-    t += drink.strength.titleize unless drink.strength == 'normal'
+    t += drink.strength.titleize unless drink.strength.nil? or drink.strength == 'normal'
     t += ' Coffee'
     t += milk_text
     t += sugar_text
