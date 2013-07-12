@@ -41,6 +41,11 @@ class DrinksController < ApplicationController
     redirect_to @page, notice: 'Drink was successfully destroyed.'
   end
 
+  def preview
+    @drink = Page.last.drinks.build(drink_params)
+    render :partial => 'drinks/image', :locals => {:drink => @drink}, :layout => false
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_drink

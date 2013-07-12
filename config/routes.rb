@@ -1,7 +1,11 @@
 Coffeespec2::Application.routes.draw do
 
   resources :pages do
-    resources :drinks
+    resources :drinks do
+      collection do
+        get :preview
+      end
+    end
   end
 
   match '/auth/:provider/callback', :to => 'session#create', :via => [:get, :post]
