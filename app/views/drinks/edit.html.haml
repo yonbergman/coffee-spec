@@ -1,0 +1,7 @@
+%h2 Update Drink
+= render 'form'
+
+.links
+  = link_to 'Delete', [@page, @drink], :method => :delete, :data => {:confirm => 'Are you sure?'}
+  %span •
+  = link_to 'Back', @page

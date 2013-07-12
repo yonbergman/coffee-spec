@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+  <%= render 'drinks/image', :drink => @drink %>
 
   <div class="field">
     <%= f.label :name %><br>
@@ -18,6 +19,30 @@
   <div class="field">
     <%= f.label :kind %><br>
     <%= f.select :kind, Drink::KINDS %>
+  </div>
+  <div class="field">
+    <%= f.label :strength %><br>
+    <%= f.select :strength, select_options(Drink::STRENGTHS), include_blank: true %>
+  </div>
+  <div class="field">
+    <%= f.label :tea_type %><br>
+    <%= f.select :tea_type, select_options(Drink::TEA_TYPES), include_blank: true %>
+  </div>
+  <div class="field">
+    <%= f.label :milk_amount %><br>
+    <%= f.select :milk_amount, select_options(Drink::MILK_AMOUNTS), include_blank: true %>
+  </div>
+  <div class="field">
+    <%= f.label :milk_type %><br>
+    <%= f.select :milk_type, select_options(Drink::MILK_TYPES), include_blank: true %>
+  </div>
+  <div class="field">
+    <%= f.label :sugar_amount %><br>
+    <%= f.select :sugar_amount, select_options(Drink::SUGAR_AMOUNTS), include_blank: true %>
+  </div>
+  <div class="field">
+    <%= f.label :sugar_type %><br>
+    <%= f.select :sugar_type, select_options(Drink::SUGAR_TYPES), include_blank: true %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,4 +1,3 @@
-.drink
-  = link_to drink.name,[@page, drink]
-  %span •
-  %span= drink.kind
+= link_to edit_page_drink_path(@page, drink), :class =>'drinkEl' do
+  = render 'drinks/image', :drink => drink
+  = render 'drinks/details', :drink => drink

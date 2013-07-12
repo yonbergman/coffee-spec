@@ -1,0 +1,13 @@
+.drink{:class => drink.kind}
+  .liquid{:class => [drink.kind, drink.strength, drink.tea_type]}
+  - if has_milk(drink)
+    .milk{:class => [drink.milk_type, drink.milk_amount]}
+  - if has_sugar(drink)
+    .sugars
+      - drink.sugar_amount.to_i.times do
+        .sugar{:class => [drink.sugar_type]}
+      - if has_half_sugar(drink)
+        .sugar.half{:class => [drink.sugar_type]}
+
+  - if has_handle(drink)
+    .handle

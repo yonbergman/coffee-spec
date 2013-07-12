@@ -19,9 +19,9 @@ gem 'turbolinks'
 gem 'debugger', group: [:development, :test]
 gem 'powder'
 
-gem 'activerecord-postgres-hstore'
-
 gem 'omniauth'
 
 gem 'controller_support'
 gem 'enumify'
+
+gem 'quiet_assets'

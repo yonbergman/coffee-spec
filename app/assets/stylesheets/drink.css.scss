@@ -1,0 +1,190 @@
+$glass-margin: 10px;
+$liquid-width: 80px;
+$liquid-height: 130px;
+$glass-color: #888;
+
+.drink{
+  display: block;
+  width: $glass-margin * 2 + $liquid-width;
+  height: $glass-margin * 2 + $liquid-height;
+  border-bottom: $glass-margin * 2 + $liquid-height solid $glass-color;
+  box-sizing: border-box;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  position: relative;
+  z-index: 8;
+
+  .liquid{
+
+    box-sizing: border-box;
+    position: absolute;
+    border-bottom: $liquid-height solid #000;
+    width: $liquid-width;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    top: $glass-margin;
+    left: $glass-margin;
+    z-index: 9;
+
+    &.coffee{
+      $regular: #ad8850;
+      $light: #dcb062;
+      $strong: #381f18;
+      &, &.regular{
+        border-color: $regular;
+      }
+      &.light{
+        border-color: $light;
+      }
+      &.strong{
+        border-color: $strong;
+      }
+    }
+
+    &.tea{
+      border-color: lightcoral;
+    }
+
+    &.water{
+      border-color: #B1DAF0;
+      top: 0;
+      border-top: $glass-margin solid white;
+    }
+  }
+
+  .milk{
+    $regular: #f0f0f0;
+    $slim: #adc9d0;
+    $soy: #e6f09e;
+
+    width: $liquid-width;
+    border-bottom: 30px solid $regular;
+    position: absolute;
+    top: $glass-margin;
+    left: $glass-margin;
+    z-index: 10;
+    form &{
+      cursor: ns-resize;
+    }
+
+    &.a_bit{
+      border-width: 10px;
+    }
+    &.a_third{
+      border-width: 30px;
+    }
+    &.a_lot{
+      border-width: 50px;
+    }
+
+    &.regular{
+      border-color: $regular
+    }
+    &.slim{
+      border-color: $slim;
+    }
+    &.soy{
+      border-color: $soy;
+    }
+  }
+
+  .handle{
+    border: 10px solid $glass-color;
+    border-radius: 10px;
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    right: -30px;
+    top: 30px;
+    z-index: 7;
+  }
+
+  .sugars{
+    $sugar-size: 15px;
+    $white-sugar-color: white;
+    $brown-sugar-color: #996414;
+
+    width: $liquid-width;
+    position: absolute;
+    left: $glass-margin;
+    top: 100px;
+    height: $sugar-size;
+    z-index: 11;
+
+    padding: 0 10px;
+    .sugar{
+      border-bottom: $sugar-size solid white;
+      width: $sugar-size;
+      margin-right: 10px;
+      float: left;
+
+      &.half{
+        width: $sugar-size/2;
+      }
+
+      &, &.regular{
+        border-color: $white-sugar-color;
+      }
+
+      &.brown{
+        border-color: $brown-sugar-color;
+
+      }
+      &.artificial_sweetner{
+        border-color: $white-sugar-color;
+        border-radius: 10px;
+        width: $sugar-size/1.5;
+        &.half{
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+          border-width: $sugar-size/1.5;
+        }
+      }
+    }
+
+  }
+
+}
+
+.drinks{
+  ul{
+    list-style: none;
+    padding: 0;
+    li a{
+      padding: 10px;
+      cursor: pointer;
+      &:hover{
+        background: #f0f0f0;
+        color: #333333;
+      }
+    }
+  }
+}
+.drinkEl{
+  display: block;
+  overflow: hidden;
+  highlight: none;
+  text-decoration: none;
+  .drink{
+    float: left;
+  }
+  .drink-details{
+    margin-left: 50px;
+    float: left;
+  }
+  .name{
+    font-size: 50px;
+    line-height: 80px;
+    display: block;
+  }
+  .text{
+    font-size: 16px;
+    padding-left: 10px;
+  }
+}
+
+form .drink{
+  float: right;
+  margin-right: 40px;
+}

@@ -1,4 +1,5 @@
-%p#notice= notice
+- if notice
+  %p#notice= notice
 %h2= @page.name
 .drinks
   %ul
@@ -7,7 +8,7 @@
         You have no drinks yet
         = link_to 'Create a drink now', new_page_drink_path(@page)
     - else
-      - @page.drinks.each do |drink|
+      - @page.drinks.ordered.each do |drink|
         %li
           = render 'drinks/drink', :drink => drink
       %li

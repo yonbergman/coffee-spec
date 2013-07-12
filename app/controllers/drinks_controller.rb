@@ -2,9 +2,11 @@ class DrinksController < ApplicationController
   include PagesSupport
 
   before_action :preload_page
-  before_action :set_drink, only: [:show, :edit, :update, :destroy]
+  before_action :set_drink, only: [:edit, :update, :destroy]
+
 
   def show
+    redirect_to @page
   end
 
   def new
@@ -27,7 +29,7 @@ class DrinksController < ApplicationController
   # PATCH/PUT /drinks/1
   def update
     if @drink.update(drink_params)
-      redirect_to @page, @drink, notice: 'Drink was successfully updated.'
+      redirect_to @page, notice: 'Drink was successfully updated.'
     else
       render action: 'edit'
     end
@@ -47,6 +49,6 @@ class DrinksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def drink_params
-      params.require(:drink).permit(:page_id, :name, :kind, :drink_attributes)
+      params.require(:drink).permit([:name, :kind] + Drink.stored_attributes[:drink_attributes])
     end
 end
