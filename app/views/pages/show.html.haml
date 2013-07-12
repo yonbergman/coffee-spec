@@ -11,7 +11,7 @@
       - @page.drinks.ordered.each do |drink|
         %li
           = render 'drinks/drink', :drink => drink
-      %li
+      %li.hide-for-print
         = link_to 'Create a drink', new_page_drink_path(@page)
 
 .links
