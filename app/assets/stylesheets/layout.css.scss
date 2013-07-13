@@ -43,13 +43,27 @@ h2{
   padding: 8px;
   color: #FFF;
   border-radius: 3px;
+  @include hide-for-print;
+  margin: 5px 0;
+  .hide-notice{
+    float: right;
+    margin-right: 10px;
+    border-radius: 20px;
+    width: 15px;
+    height: 15px;
+    background: rgba(255,255,255, 0.2);
+    text-align: center;
+    cursor: pointer;
+  }
 }
+
 #preview{
   background: #a4a4a4;
   padding: 2px 6px;
   color: #FFF;
   border-radius: 3px;
   display: inline-block;
+  @include hide-for-print;
 }
 
 .links{

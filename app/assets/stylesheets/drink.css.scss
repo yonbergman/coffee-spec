@@ -264,7 +264,7 @@ $glass-color: #888;
   ul{
     list-style: none;
     padding: 0;
-    li a{
+    li .drinkEl{
       padding: 10px;
       cursor: pointer;
       &:hover{

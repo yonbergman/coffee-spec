@@ -3,6 +3,7 @@ class DrinksController < ApplicationController
 
   before_action :preload_page
   before_action :set_drink, only: [:edit, :update, :destroy]
+  before_action :must_be_page_owner
 
 
   def show

@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   include PagesSupport
 
-  before_action :must_be_signed_in
+  before_action :must_be_signed_in, only: [:edit, :update, :destroy, :index, :new, :create]
   before_action :preload_page, only: [:show, :edit, :update, :destroy]
 
   def index

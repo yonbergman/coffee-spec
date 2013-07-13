@@ -1,3 +1,8 @@
-= link_to edit_page_drink_path(@page, drink), :class =>'drinkEl' do
-  = render 'drinks/image', :drink => drink
-  = render 'drinks/details', :drink => drink
+- if page_owner?
+  = link_to edit_page_drink_path(@page, drink), :class =>'drinkEl' do
+    = render 'drinks/image', :drink => drink
+    = render 'drinks/details', :drink => drink
+- else
+  .drinkEl
+    = render 'drinks/image', :drink => drink
+    = render 'drinks/details', :drink => drink

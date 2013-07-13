@@ -1,22 +1,27 @@
 - if notice
-  %p#notice= notice
+  #notice
+    = notice
+    .hide-notice X
 %h2= @page.name
 .drinks
   %ul
     - if @page.drinks.empty?
       %li
         You have no drinks yet
-        = link_to 'Create a drink now', new_page_drink_path(@page)
+        - if page_owner?
+          = link_to 'Create a drink now', new_page_drink_path(@page)
     - else
       - @page.drinks.ordered.each do |drink|
         %li
           = render 'drinks/drink', :drink => drink
-      %li.hide-for-print
-        = link_to 'Create a drink', new_page_drink_path(@page)
-
-.links
-  = link_to 'Edit', edit_page_path(@page)
-  %span •
-  = link_to 'Delete', @page, :method => :delete, :data => {:confirm => 'Are you sure?'}
-  %span •
-  = link_to 'Back', pages_path
+- if page_owner?
+  .links
+    = link_to 'New Drink', new_page_drink_path(@page)
+    %span •
+    = link_to 'Share Page', page_path(@page, {:share => true})
+    %span •
+    = link_to 'Edit Page', edit_page_path(@page)
+    %span •
+    = link_to 'Delete Page', @page, :method => :delete, :data => {:confirm => 'Are you sure?'}
+    %span •
+    = link_to 'Back', pages_path
