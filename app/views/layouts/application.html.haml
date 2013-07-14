@@ -6,6 +6,7 @@
     %meta{:name => 'description', :content => 'Create a personalized coffee infographic for you and your co-workers'}
     %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1'}
     %link{:href => '/favicon.ico', :rel => 'shortcut icon'}
+    = yield :meta_tags
     = csrf_meta_tags
     = stylesheet_link_tag :application
     = stylesheet_link_tag :application, :media => :print

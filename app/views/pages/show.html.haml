@@ -1,3 +1,8 @@
+- content_for :meta_tags do
+  %meta{:property => 'og:title', :content => "#{@page.name} | Coffee.spec"}
+  %meta{:property => 'og:image', :content => image_url('coffee-spec-fb.png')}
+
+
 - if notice
   #notice
     = notice
