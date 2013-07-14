@@ -1,0 +1,9 @@
+%header
+  %h1 Coffee.spec
+  .user-dashboard
+    - if user_signed_in?
+      %span
+        Hello
+        %strong= current_user.name
+        %span •
+      = link_to 'Sign Out', sign_out_path
