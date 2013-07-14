@@ -9,11 +9,11 @@ module DrinkHelper
   end
 
   def has_milk(drink)
-    drink.milk_amount.present? and drink.milk_amount != 'none'
+    drink.coffee? and drink.milk_amount.present? and drink.milk_amount != 'none'
   end
 
   def has_sugar(drink)
-    drink.sugar_amount.present? and drink.sugar_amount != 0
+    (drink.coffee? or drink.tea?) and drink.sugar_amount.present? and drink.sugar_amount != 0
   end
 
   def has_half_sugar(drink)

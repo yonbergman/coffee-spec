@@ -11,10 +11,8 @@ class Drink < ActiveRecord::Base
   enum_accessor :sugar_type, [:regular, :brown, :artificial_sweetner]
   enum_accessor :strength, [:normal, :light, :strong]
   enum_accessor :tea_type, [:earl_grey, :green, :herbal]
-
   enum_accessor :water_type, [:still, :sparkling]
   enum_accessor :soda_type, [:coke, :sprite, :fanta]
-
 
   TYPES = {
       :coffee => [:strength, :milk_amount, :milk_type, :sugar_amount, :sugar_type],
