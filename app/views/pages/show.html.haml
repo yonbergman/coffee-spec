@@ -21,7 +21,7 @@
         = render 'pages/add_drink'
 - if page_owner?
   .links
-    = link_to 'Share Page', page_path(@page, {:share => true})
+    = link_to 'Share on Facebook', share_url, :target => :_blank
     %span •
     = link_to 'Delete Page', @page, :method => :delete, :data => {:confirm => 'Are you sure?'}
     %span •

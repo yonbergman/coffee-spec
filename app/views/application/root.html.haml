@@ -1,4 +1,24 @@
-%h2 Welcome to Coffee.spec
-%p Sign in to manage your coffee.spec page/s
+.root
+  .text
+    %h2
+      With
+      %strong Coffee.spec
+      you can
+    %ul
+      %li Easily create a personalized coffee infographic for you and your co-workers.
+      %li Print the poster and hang it in the office kitchen.
+      %li Include those people who don't partake in coffee • by adding tea, water & soft drinks.
+      %li Never again forget how Dilbert drinks his coffee.
 
-= link_to 'sign in', sign_in_path(:developer), 'data-no-turbolink' => true
+    .links
+      %p
+        Sign in to create your first coffee.spec page.
+
+        = link_to sign_in_path(:facebook), 'data-no-turbolink' => true do
+          = image_tag('fb-btn.png')
+      -#= link_to 'sign in', sign_in_path(:github), 'data-no-turbolink' => true
+  .mini-drinks
+    - @drinks.each do |drink|
+      .drinkContainer
+        = render 'drinks/image', :drink => drink
+    -#%h3 What People are Drinking:

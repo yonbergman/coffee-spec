@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
       else
         redirect_to pages_path
       end
-
+    else
+      @drinks = Drink.latest(16)
     end
   end
 

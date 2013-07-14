@@ -22,6 +22,7 @@ class Drink < ActiveRecord::Base
   }
 
   scope :ordered, lambda { order(:id) }
+  scope :latest, lambda {|n| order(:id => :desc).limit(n)}
 
   after_initialize :defaults
 

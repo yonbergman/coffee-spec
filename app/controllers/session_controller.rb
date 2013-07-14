@@ -7,7 +7,7 @@ class SessionController < ApplicationController
     user = user_from_auth_hash
     if user.valid?
       sign_in(user)
-      redirect_to pages_path, :notice => 'Successfully signed in'
+      redirect_to pages_path
     else
       redirect_to :root, :error => 'Could not sign in'
     end
@@ -20,7 +20,7 @@ class SessionController < ApplicationController
 
   def destroy
     sign_out
-    redirect_to :root, :notice => 'Successfully signed out'
+    redirect_to :root
   end
 
   private
