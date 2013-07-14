@@ -6,6 +6,8 @@ class Page < ActiveRecord::Base
 
   after_initialize :defaults
 
+  validates_presence_of :name
+
 
   def to_param
     self.token

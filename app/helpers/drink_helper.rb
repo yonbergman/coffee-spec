@@ -25,4 +25,14 @@ module DrinkHelper
     drink.soda? or (drink.water? and drink.water_type == 'sparkling')
   end
 
+
+  ####
+
+  def short_name(drink)
+    if drink.name.length < 10
+      return {:class => 'short'}
+    end
+    {}
+  end
+
 end

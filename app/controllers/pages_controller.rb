@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   before_action :preload_page, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pages = current_user.pages
+    @pages = current_user.pages.order(:id)
   end
 
   def show

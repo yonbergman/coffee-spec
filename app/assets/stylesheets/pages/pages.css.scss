@@ -1,9 +1,6 @@
 .pages{
-  list-style: none;
-  padding: 0;
   li{
     cursor: pointer;
-    padding: 0 0 10px 0;
     overflow: hidden;
     &:hover{
       background: #f0f0f0;
@@ -11,13 +8,16 @@
         color: #333333;
       }
     }
+
     a{
+      display: block;
+      height: 80px;
       text-decoration: none;
       &:hover{
         background: none;
         color: none;
       }
-    };
+    }
 
     span{
       width: 250px;
@@ -26,7 +26,6 @@
       padding-left: 10px;
       top: 10px;
       position: relative;
-
     }
 
     small{
@@ -34,6 +33,7 @@
     }
   }
 }
+
 .mini-drinks{
   display: inline-block;
   height: 65px;
@@ -44,7 +44,10 @@
     float: left;
     width: 50px;
     height: 65px;
-    -webkit-transform: scale(0.3);
+    @include scale(0.3);
   }
+}
 
+.inner-content{
+  @include min-height(190px);
 }

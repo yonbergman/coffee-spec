@@ -1,2 +1,10 @@
 en:
-  hello: "Hello world"
+  title: "Coffee.spec"
+
+  drinks:
+    empty: 'No drinks have been added yet'
+
+  errors:
+    not_found: "Sorry, but the page you're looking for isn't here"
+    internal_error: "Oops; someone spilled some coffee on our servers"
+    no_permission: "You're not allowed to peek here"

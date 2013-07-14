@@ -2,26 +2,27 @@
   #notice
     = notice
     .hide-notice X
-%h2= @page.name
-.drinks
+%h2
+  = @page.name
+  - if page_owner?
+    = link_to '(rename)', edit_page_path(@page), :class => 'title-action'
+.drinks.inner-content
   %ul
     - if @page.drinks.empty?
-      %li
-        You have no drinks yet
-        - if page_owner?
-          = link_to 'Create a drink now', new_page_drink_path(@page)
+      - if page_owner?
+        = render 'pages/add_drink'
+      - else
+        %li= t('drinks.empty')
     - else
       - @page.drinks.ordered.each do |drink|
         %li
           = render 'drinks/drink', :drink => drink
+      - if page_owner?
+        = render 'pages/add_drink'
 - if page_owner?
   .links
-    = link_to 'New Drink', new_page_drink_path(@page)
-    %span •
     = link_to 'Share Page', page_path(@page, {:share => true})
-    %span •
-    = link_to 'Edit Page', edit_page_path(@page)
     %span •
     = link_to 'Delete Page', @page, :method => :delete, :data => {:confirm => 'Are you sure?'}
     %span •
-    = link_to 'Back', pages_path
+    = link_to 'All Pages', pages_path

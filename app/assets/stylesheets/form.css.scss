@@ -1,0 +1,27 @@
+.field{
+  padding: 1px 0;
+  label{
+    width: 100px;
+    margin-right: 5px;
+    text-align: right;
+    @include inline-block;
+  }
+}
+
+form{
+  .actions{
+    margin-top: 5px;
+    padding-left: 108px;
+  }
+}
+
+.drink-form{
+  @include min-height(150px);
+}
+
+.field_with_errors {
+  display: inline;
+  input, select{
+    border: 2px solid red;
+  }
+}

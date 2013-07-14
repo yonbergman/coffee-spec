@@ -1,5 +1,11 @@
+@import 'compass';
+
+@include global-reset;
+
 @import 'mixins';
-@import 'scaffolds';
+@import 'form';
 @import 'layout';
 @import 'drink';
-@import 'pages';
+@import 'pages/drinks';
+@import 'pages/pages';
+@import 'pages/error';

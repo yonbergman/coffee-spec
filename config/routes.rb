@@ -15,4 +15,11 @@ Coffeespec2::Application.routes.draw do
 
   root :to => 'application#root'
 
+
+  get '404', :to => 'static#not_found'
+  get '401', :to => 'static#not_found'
+  get '403', :to => 'static#no_permission'
+  get '422', :to => 'static#internal_error'
+  get '500', :to => 'static#internal_error'
+
 end

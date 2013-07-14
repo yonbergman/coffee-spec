@@ -2,7 +2,38 @@ body{
   background: #e5e5e5;
   font-family: "Helvetica Neue", "Helvetica", "Arial", san-serif;
   color: #444;
+  font-size: 13px;
+  line-height: normal;
+  //line-height: 18px;
 }
+
+a{
+  color: #222;
+  &:hover{
+    color: #fff;
+    background-color: #222;
+  }
+}
+
+strong{
+  font-weight: bold;
+}
+
+
+h1{
+  text-align: center;
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 72px;
+}
+
+h2{
+  text-align: center;
+  font-size: 30px;
+  line-height: 70px;
+  font-weight: 200;
+}
+
 
 .content{
   background: #fff;
@@ -20,22 +51,16 @@ header{
   overflow: hidden;
   position: relative;
 }
+
+footer{
+  text-align: center;
+}
+
 .user-dashboard{
   position: absolute;
   top: 10px;
   right: 10px;
   @include hide-for-print;
-}
-
-h1{
-  text-align: center;
-  font-size: 40px;
-  font-weight: normal;
-}
-h2{
-  text-align: center;
-  font-size: 30px;
-  font-weight: 200;
 }
 
 #notice{
@@ -57,6 +82,15 @@ h2{
   }
 }
 
+#errors{
+  background: #CE5656;
+  padding: 8px;
+  color: white;
+  border-radius: 3px;
+  @include hide-for-print;
+  margin: 5px 0;
+}
+
 #preview{
   background: #a4a4a4;
   padding: 2px 6px;
@@ -68,8 +102,17 @@ h2{
 
 .links{
   @include hide-for-print;
+  margin-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
 }
 
 .hide-for-print{
   @include hide-for-print;
+}
+
+a.title-action{
+  @include hide-for-print;
+  font-size: 13px;
+  text-decoration: none;
 }

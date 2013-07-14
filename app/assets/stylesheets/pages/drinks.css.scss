@@ -1,0 +1,74 @@
+.drinks{
+  overflow: hidden;
+}
+
+.drinkEl{
+  display: block;
+  overflow: hidden;
+  highlight: none;
+  text-decoration: none;
+  width: 420px;
+  height: 150px;
+  float: left;
+
+  padding: 10px;
+  cursor: pointer;
+
+  &:hover{
+    background: #f0f0f0;
+    color: #333333;
+  }
+
+  .drink{
+    float: left;
+  }
+  .drink-details{
+    margin-left: 50px;
+    float: left;
+    width: 250px;
+    padding-top: 0px;
+    &.short{
+      padding-top: 30px;
+
+    }
+
+  }
+  .name{
+    font-size: 50px;
+    line-height: 50px;
+    //line-height: 80px;
+    display: block;
+  }
+  .text{
+    font-size: 16px;
+    @include inline-block;
+    padding-top: 10px;
+    color: #888;
+  }
+}
+
+
+.add-drink{
+  a{
+    @extend .drinkEl;
+    color: #9a9a9a;
+    //@include text-shadow(2px 2px black);
+    font-size: 60px;
+    //line-height: 150px;
+  }
+  .plus{
+    font-size: 120px;
+    vertical-align: middle;
+  }
+  span:not(.plus){
+    position:relative;
+    top: 18px;
+  }
+  @include hide-for-print;
+}
+
+
+form .drink{
+  float: right;
+  margin-right: 40px;
+}
