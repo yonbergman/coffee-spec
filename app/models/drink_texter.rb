@@ -35,7 +35,7 @@ class DrinkTexter
   def water_text
     case drink.water_type
       when 'sparkling' then 'Sparkling Water'
-      else 'A Water'
+      else 'Water'
     end
   end
 
