@@ -28,3 +28,9 @@
     = link_to 'Delete Page', @page, :method => :delete, :data => {:confirm => 'Are you sure?'}
     %span •
     = link_to 'All Pages', pages_path
+- else
+  .links.center
+    %strong Want to create your own Coffee inforgraphic?
+    %br
+    = link_to 'Sign in', sign_in_path, 'data-no-turbolink' => true
+    %span to start a new page.

@@ -3,12 +3,14 @@
     %h2
       With
       %strong Coffee.spec
-      you can
+      you can...
     %ul
       %li Easily create a personalized coffee infographic for you and your co-workers.
       %li Print the poster and hang it in the office kitchen.
-      %li Include those people who don't partake in coffee • by adding tea, water & soft drinks.
-      %li Never again forget how Dilbert drinks his coffee.
+      %li Include people who don't drink coffee by adding tea, water & soft drinks.
+      %li Share your digital posters on Facebook.
+      %li
+        %strong Get your coffee - just the way you like it.
 
     .links
       %p
@@ -16,9 +18,7 @@
 
         = link_to sign_in_path(:facebook), 'data-no-turbolink' => true do
           = image_tag('fb-btn.png')
-      -#= link_to 'sign in', sign_in_path(:github), 'data-no-turbolink' => true
   .mini-drinks
     - @drinks.each do |drink|
       .drinkContainer
         = render 'drinks/image', :drink => drink
-    -#%h3 What People are Drinking:
