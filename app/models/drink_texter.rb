@@ -8,6 +8,7 @@ class DrinkTexter
   def text
     case(drink.kind)
       when :coffee then coffee_text
+      when :iced_coffee then iced_coffee_text
       when :tea then tea_text
       when :water then water_text
       when :soda then soda_text
@@ -21,6 +22,14 @@ class DrinkTexter
     t = ''
     t += drink.strength.titleize unless drink.strength.nil? or drink.strength == 'normal'
     t += ' Coffee'
+    t += milk_text
+    t += sugar_text
+  end
+
+  def iced_coffee_text
+    t = ''
+    t += drink.strength.titleize unless drink.strength.nil? or drink.strength == 'normal'
+    t += ' Iced Coffee'
     t += milk_text
     t += sugar_text
   end

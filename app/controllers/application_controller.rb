@@ -6,15 +6,7 @@ class ApplicationController < ActionController::Base
   include UserSupport
 
   def root
-    if user_signed_in?
-      if current_user.pages.count == 1
-        redirect_to page_path(current_user.pages.first)
-      else
-        redirect_to pages_path
-      end
-    else
-      @drinks = Drink.latest(16)
-    end
+    @drinks = Drink.latest(16)
   end
 
 end

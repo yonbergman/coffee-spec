@@ -13,11 +13,16 @@
         %strong Get your coffee - just the way you like it.
 
     .links
-      %p
-        Sign in to create your first coffee.spec poster
+      - if user_signed_in?
+        %p= link_to 'View your pages', pages_path
 
-        = link_to sign_in_path(:facebook), 'data-no-turbolink' => true do
-          = image_tag('fb-btn.png')
+
+      - else
+        %p
+          Sign in to create your first coffee.spec poster
+
+          = link_to sign_in_path(:facebook), :class => 'fb-link', 'data-no-turbolink' => true do
+            = image_tag('fb-btn.png')
   .mini-drinks
     - @drinks.each do |drink|
       .drinkContainer

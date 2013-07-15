@@ -45,7 +45,7 @@
 
   .links{
     text-align: center;
-    a{
+    a.fb-link{
       &:hover{
         background:transparent;
         @include opacity(0.9);
