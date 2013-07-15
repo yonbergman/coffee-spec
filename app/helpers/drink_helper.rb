@@ -9,15 +9,15 @@ module DrinkHelper
   end
 
   def has_handle(drink)
-    drink.coffee? or drink.tea?
+    drink.coffee? or drink.tea? or drink.espresso?
   end
 
   def has_milk(drink)
-    (drink.iced_coffee? or drink.coffee?) and drink.milk_amount.present? and drink.milk_amount != 'none'
+    drink.possible_drink_attributes.include?(:milk_amount) and drink.milk_amount.present? and drink.milk_amount != 'none'
   end
 
   def has_sugar(drink)
-    (drink.iced_coffee? or drink.coffee? or drink.tea?) and drink.sugar_amount.present? and drink.sugar_amount != 0
+    drink.possible_drink_attributes.include?(:sugar_amount) and drink.sugar_amount.present? and drink.sugar_amount != 0
   end
 
   def has_half_sugar(drink)
@@ -27,6 +27,14 @@ module DrinkHelper
 
   def is_sparkling(drink)
     drink.soda? or (drink.water? and drink.water_type == 'sparkling')
+  end
+
+  def small_glass(drink)
+    drink.espresso? ? 'small' : ''
+  end
+
+  def has_pod(drink)
+    drink.espresso? and drink.pod != 'any'
   end
 
   ####

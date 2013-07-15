@@ -75,7 +75,7 @@ class DrinkTexter
       t += case drink.sugar_type
         when 'regular' then 'Sugar'
         when 'brown' then 'Brown Sugar'
-        when 'artificial_sweetner' then 'Artificial Sweetner'
+        when 'artificial_sweetener' then 'Artificial Sweetner'
       end
     end
     t

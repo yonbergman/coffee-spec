@@ -3,6 +3,15 @@ $liquid-width: 80px;
 $liquid-height: 130px;
 $glass-color: #888;
 
+@mixin pod($color){
+  .top{
+    border-bottom-color: darken($color, 20);
+  }
+  .middle{
+    border-bottom-color: $color;
+  }
+}
+
 .drink{
   display: block;
   width: $glass-margin * 2 + $liquid-width;
@@ -43,6 +52,9 @@ $glass-color: #888;
     }
 
     &.iced_coffee{
+      @extend .coffee;
+    }
+    &.espresso{
       @extend .coffee;
     }
 
@@ -176,7 +188,7 @@ $glass-color: #888;
         border-color: $brown-sugar-color;
 
       }
-      &.artificial_sweetner{
+      &.artificial_sweetener{
         border-color: $white-sugar-color;
         border-radius: 10px;
         width: $sugar-size/1.5;
@@ -342,5 +354,113 @@ $glass-color: #888;
         width: 71px;
       }
     }
+  }
+
+
+  &.small{
+    border-width: 100px;
+    width: 80px;
+    margin-left: 20px;
+
+    .liquid{
+      top: 60px;
+      width: 60px;
+      @include border-bottom-radius(2px);
+    }
+
+    &, &.single{
+      .liquid{
+        border-bottom-width: 20px;
+        top: 120px;
+      }
+      .sugars{
+        top: 125px;
+      }
+
+      .milk{
+        bottom: -70px;
+      }
+    }
+
+    &.double{
+      .liquid{
+        border-bottom-width: 40px;
+        top: 100px;
+      }
+
+      .milk{
+        bottom: -50px;
+      }
+    }
+
+    .milk{
+      top: auto;
+      width: 60px;
+      &.a_third{
+        border-width: 25px;
+      }
+      &.a_lot{
+        border-width: 40px;
+      }
+    }
+
+    .sugars{
+      top: 116px;
+      left: 10px;
+      @include scale(0.75);
+      @include transform-origin(0,0);
+    }
+
+    .handle{
+      height: 20px;
+      top: 70px;
+      border-radius: 20px;
+      width: 10px;
+      right: -20px;
+    }
+  }
+
+  .pod{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: -120px;
+    right: -15px;
+    z-index: 13;
+    .top{
+      border-bottom: 4px solid #ADADAD;
+      border-left: 2px solid transparent;
+      border-right: 2px solid transparent;
+      margin-left: 9px;
+      width: 18px;
+    }
+    .middle{
+      width: 24px;
+      border-bottom: 20px solid red;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      margin-left: 5px;
+    }
+    .bottom{
+      border-bottom: 4px solid #BEBEBE;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+    }
+
+
+    &.ristretto { @include pod(#4b4b4b); }
+    &.arpeggio  { @include pod(#6e318d); }
+    &.roma      { @include pod(#4a443c); }
+    &.livanto   { @include pod(#a7631c); }
+    &.capriccio { @include pod(#476f3d); }
+    &.volluto   { @include pod(#bb974b); }
+    &.cosi      { @include pod(#521508); }
+    &.indriya   { @include pod(#a9a489); }
+    &.rosabaya  { @include pod(#d0a7ab); }
+    &.dulsao    { @include pod(#e9dcb5); }
+    &.fortissio { @include pod(#3f5c58); }
+    &.vivalto   { @include pod(#8290e4); }
+    &.linizio   { @include pod(#d78e3a); }
+
   }
 }
