@@ -17,6 +17,10 @@
         background: none;
         color: none;
       }
+
+      @include mobile{
+        height: auto;
+      }
     }
 
     span{
@@ -26,11 +30,20 @@
       padding-left: 10px;
       top: 10px;
       position: relative;
+      @include mobile{
+        top: auto;
+        display: block;
+        padding: 10px 0 10px 10px;
+      }
     }
 
     small{
       font-size: 12px;
     }
+  }
+
+  .mini-drinks{
+    @include hide-for-mobile;
   }
 }
 

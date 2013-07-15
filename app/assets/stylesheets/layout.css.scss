@@ -45,7 +45,8 @@ h2{
   padding: 0 20px 20px 20px;
 
   @include mobile{
-    width: 300px;
+    width: 280px;
+    margin: 15px auto;
     padding: 0 10px 20px 10px;
   }
 }

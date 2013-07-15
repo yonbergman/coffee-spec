@@ -1,5 +1,11 @@
 .drinks{
   overflow: hidden;
+  li{
+    @include mobile{
+      height: 110px;
+      overflow: hidden;
+    }
+  }
 }
 
 .drinkEl{
@@ -45,8 +51,8 @@
 
   @include mobile{
     padding: 0;
-    @include scale(0.72);
-    @include transform-origin(0);
+    @include scale(0.65);
+    @include transform-origin(0,0);
   }
 }
 
@@ -74,4 +80,10 @@
 form .drink{
   float: right;
   margin-right: 40px;
+
+  @include mobile{
+    display: none;
+    float: none;
+    margin: 0;
+  }
 }

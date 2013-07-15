@@ -6,10 +6,24 @@
   .text{
     width: 660px;
     float: left;
+    @include mobile{
+      width: auto;
+      float: none;
+      h2{
+        line-height: auto;
+        font-size: 20px;
+      }
+    }
   }
   .mini-drinks{
     float: right;
     width: 200px;
+    @include mobile{
+      float: none;
+      width: auto;
+      margin-left: -8px;
+
+    }
   }
 
 
@@ -17,6 +31,10 @@
     list-style: circle;
     margin-left: 20px;
     font-size: 16px;
+    @include mobile{
+      font-size: 13px;
+      margin-left: 6px;
+    }
   }
 
   .sign-in-now{
