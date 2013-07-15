@@ -10,6 +10,7 @@ class PostersController < ApplicationController
   end
 
   def show
+    @title = @poster.name
   end
 
   def new

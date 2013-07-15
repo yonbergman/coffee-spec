@@ -2,9 +2,12 @@
 %html.no-js{:lang => 'en'}
   %head
     %meta{:charset => 'utf-8'}
-    %title Coffee.spec
-    %meta{:name => 'description', :content => 'Create a personalized coffee infographic for you and your co-workers'}
+    %title= title
+    %meta{:name => 'description', :content => I18n.t('description')}
     %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1'}
+    %meta{:property => 'og:title', :content => title}
+    %meta{:property => 'og:description', :content => I18n.t('description')}
+    %meta{:property => 'og:image', :content => image_url('coffee-spec-fb.png')}
     %link{:href => '/favicon.ico', :rel => 'shortcut icon'}
     = yield :meta_tags
     = csrf_meta_tags
