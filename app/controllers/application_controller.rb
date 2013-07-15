@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   include UserSupport
 
   def root
-    @drinks = Drink.latest(16)
+    @drinks = Drink.latest(17)
   end
 
 end

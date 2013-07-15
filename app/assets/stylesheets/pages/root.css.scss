@@ -4,7 +4,7 @@
   line-height: 30px;
   overflow: hidden;
   .text{
-    width: 660px;
+    width: 600px;
     float: left;
     @include mobile{
       width: auto;
@@ -16,14 +16,32 @@
     }
   }
   .mini-drinks{
-    float: right;
-    width: 200px;
+    width: 240px;
+    overflow: hidden;
+    height: 270px;
+    margin-left: 10px;
+    background: white;
     @include mobile{
       float: none;
       width: auto;
       margin-left: -8px;
 
     }
+  }
+
+  .sample{
+    float: right;
+    width: 240px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    a:hover{
+      background: none;
+      span{
+        background: black;
+      }
+    }
+    font-size: 12px;
   }
 
 
