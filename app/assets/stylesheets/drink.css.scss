@@ -54,8 +54,9 @@ $glass-color: #888;
     &.iced_coffee{
       @extend .coffee;
     }
+
     &.espresso{
-      @extend .coffee;
+      border-color: #ad8850;
     }
 
     &.tea{
