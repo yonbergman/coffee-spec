@@ -34,7 +34,7 @@ module DrinkHelper
   end
 
   def has_pod(drink)
-    drink.espresso? and drink.pod != 'any'
+    drink.espresso? and drink.pod.present? and drink.pod != 'any'
   end
 
   def cooler_glass(drink)

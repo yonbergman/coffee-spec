@@ -1,8 +1,5 @@
-[ ] Rename Page to Poster
-[ ] Add Espresso
-    * Size - Single, Double, Triple
-    * Length - Ristretto, Normale, Lungo # NOPE #
-    * Pod - Any, *List
+[v] Rename Page to Poster
+[v] Add Espresso
 [ ] Add Turkish Coffee ?
 [ ] Buy Domain and connect it
 [ ] Brown sugar on Coffee

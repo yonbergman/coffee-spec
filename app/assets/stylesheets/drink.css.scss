@@ -159,7 +159,7 @@ $glass-color: #888;
   .sugars{
     $sugar-size: 15px;
     $white-sugar-color: white;
-    $brown-sugar-color: #a58136;
+    $brown-sugar-color: #705D35;
 
     width: $liquid-width;
     position: absolute;
@@ -372,7 +372,8 @@ $glass-color: #888;
       bottom: -90px;
       width: 60px;
       border-radius: 0;
-      border-top: 20px solid lighten($glass-color, 8);
+      border-top-style: solid;
+      border-top-color: lighten($glass-color, 8) !important;
     }
 
     &, &.single{
@@ -398,6 +399,9 @@ $glass-color: #888;
       .milk{
         bottom: -50px;
       }
+      .sugars{
+        top: 116px;
+      }
     }
 
     .milk{
@@ -412,7 +416,6 @@ $glass-color: #888;
     }
 
     .sugars{
-      top: 116px;
       left: 10px;
       @include scale(0.75);
       @include transform-origin(0,0);
