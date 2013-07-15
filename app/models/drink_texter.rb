@@ -9,6 +9,7 @@ class DrinkTexter
     case(drink.kind)
       when :coffee then coffee_text
       when :iced_coffee then iced_coffee_text
+      when :espresso then espresso_text
       when :tea then tea_text
       when :water then water_text
       when :soda then soda_text
@@ -34,6 +35,15 @@ class DrinkTexter
     t += sugar_text
   end
 
+  def espresso_text
+    t = ''
+    t += 'Double ' if drink.size == 'double'
+    t += 'Espresso'
+    t += " (#{drink.pod.titleize}) " unless drink.pod.nil? or drink.pod == 'any'
+    milk = milk_text
+    t += milk unless milk == ', No Milk'
+    t += sugar_text
+  end
 
   def tea_text
     t = drink.tea_type.titleize

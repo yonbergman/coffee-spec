@@ -363,15 +363,17 @@ $glass-color: #888;
     margin-left: 20px;
 
     .liquid{
-      top: 60px;
+      top: auto;
+      bottom: -90px;
       width: 60px;
-      @include border-bottom-radius(2px);
+      border-radius: 0;
+      border-top: 20px solid lighten($glass-color, 8);
     }
 
     &, &.single{
       .liquid{
         border-bottom-width: 20px;
-        top: 120px;
+        border-top-width: 60px;
       }
       .sugars{
         top: 125px;
@@ -385,7 +387,7 @@ $glass-color: #888;
     &.double{
       .liquid{
         border-bottom-width: 40px;
-        top: 100px;
+        border-top-width: 40px;
       }
 
       .milk{
