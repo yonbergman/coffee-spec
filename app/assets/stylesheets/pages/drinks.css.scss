@@ -42,6 +42,12 @@
     //padding-top: 10px;
     color: #888;
   }
+
+  @include mobile{
+    padding: 0;
+    @include scale(0.72);
+    @include transform-origin(0);
+  }
 }
 
 

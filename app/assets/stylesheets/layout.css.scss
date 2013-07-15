@@ -43,6 +43,11 @@ h2{
   min-height: 350px;
   margin: 30px auto 30px auto;
   padding: 0 20px 20px 20px;
+
+  @include mobile{
+    width: 300px;
+    padding: 0 10px 20px 10px;
+  }
 }
 
 
@@ -55,6 +60,10 @@ header{
 footer{
   text-align: center;
   padding-bottom: 10px;
+  @include mobile{
+    width: 250px;
+    margin: 0 auto;
+  }
 }
 
 .user-dashboard{
@@ -62,6 +71,7 @@ footer{
   top: 10px;
   right: 10px;
   @include hide-for-print;
+  @include hide-for-mobile;
 }
 
 #notice{

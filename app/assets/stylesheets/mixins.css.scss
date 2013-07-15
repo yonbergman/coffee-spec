@@ -3,3 +3,15 @@
     display: none;
   }
 }
+
+@mixin mobile(){
+  @media screen and (max-width: 700px) {
+    @content;
+  }
+}
+
+@mixin hide-for-mobile{
+  @include mobile{
+    display: none;
+  }
+}
