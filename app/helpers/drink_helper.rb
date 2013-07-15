@@ -4,16 +4,20 @@ module DrinkHelper
 
   end
 
+  def is_iced(drink)
+    drink.iced_coffee?
+  end
+
   def has_handle(drink)
     drink.coffee? or drink.tea?
   end
 
   def has_milk(drink)
-    drink.coffee? and drink.milk_amount.present? and drink.milk_amount != 'none'
+    (drink.iced_coffee? or drink.coffee?) and drink.milk_amount.present? and drink.milk_amount != 'none'
   end
 
   def has_sugar(drink)
-    (drink.coffee? or drink.tea?) and drink.sugar_amount.present? and drink.sugar_amount != 0
+    (drink.iced_coffee? or drink.coffee? or drink.tea?) and drink.sugar_amount.present? and drink.sugar_amount != 0
   end
 
   def has_half_sugar(drink)
@@ -25,7 +29,6 @@ module DrinkHelper
     drink.soda? or (drink.water? and drink.water_type == 'sparkling')
   end
 
-
   ####
 
   def short_name(drink)
@@ -33,6 +36,10 @@ module DrinkHelper
       return {:class => 'short'}
     end
     {}
+  end
+
+  def iced(drink)
+    is_iced(drink) ? 'iced' : ''
   end
 
 end

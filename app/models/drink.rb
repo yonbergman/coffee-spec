@@ -4,7 +4,7 @@ class Drink < ActiveRecord::Base
   belongs_to :page
   has_one :user, :through => :page
 
-  enum :kind, [:coffee, :tea, :water, :soda]
+  enum :kind, [:coffee, :iced_coffee, :tea, :water, :soda]
   enum_accessor :milk_amount, [:none, :a_bit, :a_third, :a_lot]
   enum_accessor :milk_type, [:regular, :slim, :soy]
   enum_accessor :sugar_amount, [0, 0.5, 1, 1.5, 2, 2.5]
@@ -16,6 +16,7 @@ class Drink < ActiveRecord::Base
 
   TYPES = {
       :coffee => [:strength, :milk_amount, :milk_type, :sugar_amount, :sugar_type],
+      :iced_coffee => [:strength, :milk_amount, :milk_type, :sugar_amount, :sugar_type],
       :tea => [:tea_type, :sugar_amount, :sugar_type],
       :water => [:water_type],
       :soda => [:soda_type],

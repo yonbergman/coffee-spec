@@ -1,5 +1,10 @@
-.drink{:class => drink.kind}
+.drink{:class => [drink.kind, iced(drink)]}
   .liquid{:class => [drink.kind, drink.strength, drink.tea_type, drink.water_type, drink.soda_type]}
+  - if is_iced(drink)
+    .ice
+      .cube.cube-1
+      .cube.cube-2
+      .cube.cube-3
   - if drink.tea?
     .teabag
   - if has_milk(drink)

@@ -42,6 +42,10 @@ $glass-color: #888;
       }
     }
 
+    &.iced_coffee{
+      @extend .coffee;
+    }
+
     &.tea{
       $earl-grey-tea-color: rgba(#db4a0c, 0.5);
       $herbal-tea-color: #eb9696;
@@ -256,6 +260,87 @@ $glass-color: #888;
       border-radius: 20px;
       left: 20px;
       top: 70px;
+    }
+  }
+
+
+  &.iced{
+    border-bottom-width: 0;
+    border-left: 15px solid rgba(0, 0, 0, 0) !important;
+    border-right: 15px solid rgba(0, 0, 0, 0) !important;
+    border-top: 150px solid #888;
+    border-radius: 0;
+
+    .liquid{
+      border-bottom-width: 0;
+      border-top-width: 130px;
+      border-top-style: solid;
+      border-radius: 0;
+      border-left: 10px solid rgba(0, 0, 0, 0) !important;
+      border-right: 10px solid rgba(0, 0, 0, 0) !important;
+      left: -5px;
+      top: -140px;
+    }
+
+    .ice{
+      position: absolute;
+      top: -135px;
+      left: 0;
+      z-index: 12;
+      .cube{
+        border-bottom: 20px solid rgba(66, 172, 255, 0.5);
+        width: 20px;
+        position: absolute;
+        top: 0;
+        left: 2px;
+        @include rotate(45deg);
+      }
+
+      .cube-2{
+        width: 15px;
+        border-width: 15px;
+        left: 25px;
+        top: 2px;
+        @include rotate(5deg);
+      }
+
+      .cube-3{
+        width: 25px;
+        border-width: 25px;
+        left: 45px;
+        @include rotate(65deg);
+      }
+
+    }
+
+    .sugars{
+      top: -40px;
+      left: -5px;
+    }
+
+    .milk{
+      border-bottom-width: 0;
+      border-top-style: solid;
+      border-radius: 0;
+      left: -5px;
+      top: -140px;
+
+      width: 77px;
+      border-left: 2px solid rgba(0, 0, 0, 0) !important;
+      border-right: 2px solid rgba(0, 0, 0, 0) !important;
+
+      &.a_bit{
+        border-top-width: 10px;
+      }
+      &.a_third{
+        border-top-width: 20px;
+      }
+      &.a_lot{
+        border-top-width: 50px;
+        border-left: 5px solid rgba(0, 0, 0, 0) !important;
+        border-right: 5px solid rgba(0, 0, 0, 0) !important;
+        width: 71px;
+      }
     }
   }
 }
