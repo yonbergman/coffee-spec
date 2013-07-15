@@ -1,0 +1,41 @@
+- content_for :meta_tags do
+  %meta{:property => 'og:title', :content => "#{@poster.name} | Coffee.spec"}
+  %meta{:property => 'og:image', :content => image_url('coffee-spec-fb.png')}
+
+
+- if notice
+  #notice
+    = notice
+    .hide-notice X
+%h2
+  = @poster.name
+  - if poster_owner?
+    = link_to '(rename)', edit_poster_path(@poster), :class => 'title-action'
+.drinks.inner-content
+  %ul
+    - if @poster.drinks.empty?
+      - if poster_owner?
+        = render 'posters/add_drink'
+      - else
+        %li= t('drinks.empty')
+    - else
+      - @poster.drinks.ordered.each do |drink|
+        %li
+          = render 'drinks/drink', :drink => drink
+      - if poster_owner?
+        = render 'posters/add_drink'
+- if poster_owner?
+  .links
+    = link_to 'Print Infographic', 'javascript:window.print();'
+    %span •
+    = link_to 'Share on Facebook', share_url, :target => :_blank
+    %span •
+    = link_to 'Delete Poster', @poster, :method => :delete, :data => {:confirm => 'Are you sure?'}
+    %span •
+    = link_to 'All Posters', posters_path
+- else
+  .links.center
+    %strong Want to create your own Coffee poster?
+    %br
+    = link_to 'Sign in', sign_in_path, 'data-no-turbolink' => true
+    %span to start a new poster.

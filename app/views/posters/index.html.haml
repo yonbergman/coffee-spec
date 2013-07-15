@@ -1,0 +1,15 @@
+%h2 Your Posters
+%ul.posters.inner-content
+  - @posters.each do |poster|
+    %li
+      = link_to poster do
+        %span
+          = poster.name
+          %small= "(#{pluralize(poster.drinks.count, 'drink')})"
+        .mini-drinks
+          - poster.drinks.each do |drink|
+            .drinkContainer
+              = render 'drinks/image', :drink => drink
+
+.links
+  = link_to 'New Poster', new_poster_path

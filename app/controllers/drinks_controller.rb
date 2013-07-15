@@ -1,17 +1,17 @@
 class DrinksController < ApplicationController
-  include PagesSupport
+  include PostersSupport
 
-  before_action :preload_page
+  before_action :preload_poster
   before_action :set_drink, only: [:edit, :update, :destroy]
-  before_action :must_be_page_owner
+  before_action :must_be_poster_owner
 
 
   def show
-    redirect_to @page
+    redirect_to @poster
   end
 
   def new
-    @drink = current_page.drinks.build
+    @drink = current_poster.drinks.build
     live_preview
   end
 
@@ -20,10 +20,10 @@ class DrinksController < ApplicationController
   end
 
   def create
-    @drink = current_page.drinks.build(drink_params)
+    @drink = current_poster.drinks.build(drink_params)
 
     if @drink.save
-      redirect_to @page, notice: 'Drink was successfully created.'
+      redirect_to @poster, notice: 'Drink was successfully created.'
     else
       render action: 'new'
     end
@@ -32,7 +32,7 @@ class DrinksController < ApplicationController
   # PATCH/PUT /drinks/1
   def update
     if @drink.update(drink_params)
-      redirect_to @page, notice: 'Drink was successfully updated.'
+      redirect_to @poster, notice: 'Drink was successfully updated.'
     else
       render action: 'edit'
     end
@@ -41,11 +41,11 @@ class DrinksController < ApplicationController
   # DELETE /drinks/1
   def destroy
     @drink.destroy
-    redirect_to @page, notice: 'Drink was successfully destroyed.'
+    redirect_to @poster, notice: 'Drink was successfully destroyed.'
   end
 
   def preview
-    @drink = Page.last.drinks.build(drink_params)
+    @drink = Poster.last.drinks.build(drink_params)
     render 'drinks/edit', :locals => {:drink => @drink}, :layout => false
   end
 

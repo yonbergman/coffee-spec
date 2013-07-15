@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :pages
+  has_many :posters
 
   after_create :create_default_page
 
@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   private
 
   def create_default_page
-    self.pages.create(:name => 'Starting Page')
+    self.posters.create(:name => 'Starting Page')
   end
 
 end

@@ -1,0 +1,12 @@
+= form_for(@poster) do |f|
+
+  - if @poster.errors.any?
+    #errors
+      %ul
+        - @poster.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :name
+    = f.text_field :name, :placeholder => 'Poster\'s name'
+  .actions
+    = f.submit 'Save'

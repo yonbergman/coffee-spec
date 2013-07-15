@@ -2,6 +2,6 @@
 = render 'form'
 
 .links
-  = link_to 'Delete', [@page, @drink], :method => :delete, :data => {:confirm => 'Are you sure?'}
+  = link_to 'Delete', [@poster, @drink], :method => :delete, :data => {:confirm => 'Are you sure?'}
   %span •
-  = link_to 'Back', @page
+  = link_to 'Back', @poster

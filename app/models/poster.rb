@@ -1,4 +1,4 @@
-class Page < ActiveRecord::Base
+class Poster < ActiveRecord::Base
   TOKEN_LENGTH = 8
 
   belongs_to :user

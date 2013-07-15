@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130713083400) do
+ActiveRecord::Schema.define(version: 20130715190038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
 
   create_table "drinks", force: true do |t|
-    t.integer  "page_id"
+    t.integer  "poster_id"
     t.string   "name"
     t.string   "kind"
     t.hstore   "drink_attributes"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20130713083400) do
     t.datetime "updated_at"
   end
 
-  create_table "pages", force: true do |t|
+  create_table "posters", force: true do |t|
     t.integer  "user_id"
     t.string   "name"
     t.datetime "created_at"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20130713083400) do
     t.string   "token"
   end
 
-  add_index "pages", ["token"], name: "index_pages_on_token", unique: true, using: :btree
+  add_index "posters", ["token"], name: "index_posters_on_token", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"

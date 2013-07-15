@@ -1,6 +1,6 @@
 Coffeespec2::Application.routes.draw do
 
-  resources :pages do
+  resources :posters do
     resources :drinks do
       collection do
         get :preview

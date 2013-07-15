@@ -1,8 +1,8 @@
 class Drink < ActiveRecord::Base
   include EnumAccessor
 
-  belongs_to :page
-  has_one :user, :through => :page
+  belongs_to :poster
+  has_one :user, :through => :poster
 
   enum :kind, [:coffee, :iced_coffee, :tea, :water, :soda]
   enum_accessor :milk_amount, [:none, :a_bit, :a_third, :a_lot]
@@ -59,7 +59,7 @@ class Drink < ActiveRecord::Base
 
   def defaults
     self.kind ||= :coffee
-    if page.drinks.empty?
+    if poster.drinks.empty?
       self.name ||= user.name
     end
   end
