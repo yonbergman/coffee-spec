@@ -37,17 +37,8 @@ module DrinkHelper
     drink.espresso? and drink.pod != 'any'
   end
 
-  ####
-
-  def short_name(drink)
-    if drink.name.length < 10
-      return {:class => 'short'}
-    end
-    {}
-  end
-
-  def iced(drink)
-    is_iced(drink) ? 'iced' : ''
+  def cooler_glass(drink)
+    (drink.iced_coffee? or drink.soda? or drink.water?) ? 'cooler_glass' : ''
   end
 
 end

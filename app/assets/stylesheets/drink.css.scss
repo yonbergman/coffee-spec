@@ -276,7 +276,7 @@ $glass-color: #888;
   }
 
 
-  &.iced{
+  &.cooler_glass{
     border-bottom-width: 0;
     border-left: 15px solid rgba(0, 0, 0, 0) !important;
     border-right: 15px solid rgba(0, 0, 0, 0) !important;
@@ -288,8 +288,8 @@ $glass-color: #888;
       border-top-width: 130px;
       border-top-style: solid;
       border-radius: 0;
-      border-left: 10px solid rgba(0, 0, 0, 0) !important;
-      border-right: 10px solid rgba(0, 0, 0, 0) !important;
+      border-left: 11px solid rgba(0, 0, 0, 0) !important;
+      border-right: 11px solid rgba(0, 0, 0, 0) !important;
       left: -5px;
       top: -140px;
     }
@@ -353,6 +353,11 @@ $glass-color: #888;
         border-right: 5px solid rgba(0, 0, 0, 0) !important;
         width: 71px;
       }
+    }
+
+    .bubbles{
+      left: 10px;
+      top: -125px;
     }
   }
 
