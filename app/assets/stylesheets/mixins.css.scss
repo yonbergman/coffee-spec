@@ -3,6 +3,12 @@
     display: none;
   }
 }
+@mixin show-for-print(){
+  @media print {
+    display: block;
+  }
+}
+
 
 @mixin mobile(){
   @media screen and (max-width: 700px) {

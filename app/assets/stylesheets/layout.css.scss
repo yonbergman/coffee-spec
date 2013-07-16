@@ -131,3 +131,13 @@ a.title-action{
   font-size: 13px;
   text-decoration: none;
 }
+
+
+.built_with{
+  display: none;
+  @include show-for-print;
+  margin-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+  text-align: center;
+}
