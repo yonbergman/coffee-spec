@@ -1,6 +1,7 @@
 .root
   .text
-    %h2
+    %h2 Create stunning coffee posters for your office
+    %h3
       With
       %strong Coffee.spec
       you can...
@@ -19,14 +20,16 @@
 
       - else
         %p
-          Sign in to create your first coffee.spec poster
+          Sign in to create your first Coffee.spec poster
+          %small (So you can return to your poster whenever you want to)
 
           = link_to sign_in_path(:facebook), :class => 'fb-link', 'data-no-turbolink' => true do
             = image_tag('fb-btn.png')
   .sample
     = link_to 'http://www.coffeespec.com/posters/wwtdUVkKXAQ' do
-      .mini-drinks
-        - @drinks.each do |drink|
-          .drinkContainer
-            = render 'drinks/image', :drink => drink
+      -#.mini-drinks
+      -#  - @drinks.each do |drink|
+      -#    .drinkContainer
+      -#      = render 'drinks/image', :drink => drink
+      .poster-image
       %span VIEW SAMPLE POSTER
