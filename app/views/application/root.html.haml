@@ -24,12 +24,8 @@
           %small (So you can return to your poster whenever you want to)
 
           = link_to sign_in_path(:facebook), :class => 'fb-link', 'data-no-turbolink' => true do
-            = image_tag('fb-btn.png')
+            = image_tag('fb-btn.png', height: 37, width: 186)
   .sample
     = link_to 'http://www.coffeespec.com/posters/wwtdUVkKXAQ' do
-      -#.mini-drinks
-      -#  - @drinks.each do |drink|
-      -#    .drinkContainer
-      -#      = render 'drinks/image', :drink => drink
       .poster-image
       %span VIEW SAMPLE POSTER
