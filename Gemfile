@@ -29,4 +29,6 @@ gem 'enumify'
 gem 'quiet_assets'
 
 gem 'rails_12factor', group: :production
-gem 'compass-rails'
+gem 'compass-rails', '~> 2.0.alpha.0'
+
+
