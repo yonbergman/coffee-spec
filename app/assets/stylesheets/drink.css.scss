@@ -24,6 +24,12 @@ $glass-color: #888;
   position: relative;
   z-index: 8;
 
+  &.coffee, &.tea{
+    &, & .liquid{
+      background: rgba(black, 1);
+    }
+  }
+
   .liquid{
 
     @include box-sizing(border-box);
@@ -60,20 +66,23 @@ $glass-color: #888;
     }
 
     &.tea{
-      $earl-grey-tea-color: rgba(#db4a0c, 0.5);
+      $earl-grey-tea-color: #b96044;
       $herbal-tea-color: #eb9696;
       $green-tea-color: #abc564;
 
       &, &.earl_grey {
         border-color: $earl-grey-tea-color;
+        background: $earl-grey-tea-color;
       }
 
       &.herbal{
         border-color: $herbal-tea-color;
+        background: $herbal-tea-color;
       }
 
       &.green{
         border-color: $green-tea-color;
+        background: $green-tea-color;
       }
 
     }
@@ -166,7 +175,7 @@ $glass-color: #888;
     position: absolute;
     left: $glass-margin;
     top: 100px;
-    height: $sugar-size;
+    height: $sugar-size + 1 ;
     z-index: 11;
 
     padding: 0 10px;
@@ -176,6 +185,7 @@ $glass-color: #888;
       width: $sugar-size;
       margin-right: 10px;
       float: left;
+      height: 1px;
 
       &.half{
         width: $sugar-size/2;
@@ -212,8 +222,8 @@ $glass-color: #888;
     content: "";
     position: absolute;
     width: 20px;
-    height: 25px;
-    background: $teabag-color;
+    height: 0;
+    border-bottom: 25px solid $teabag-color;
     top: $string-length;
     left: 5px;
     z-index: 12;

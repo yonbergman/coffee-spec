@@ -1,1 +1,1 @@
-rvm use --create 1.9.3@coffeespec2
+rvm use --create 1.9.3-p392@coffeespec2
