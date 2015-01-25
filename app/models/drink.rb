@@ -4,7 +4,7 @@ class Drink < ActiveRecord::Base
   belongs_to :poster
   has_one :user, :through => :poster
 
-  enum :kind, [:coffee, :iced_coffee, :espresso, :tea, :water, :soda]
+  enum :kind, [:coffee, :iced_coffee, :espresso, :turkish, :tea, :water, :soda]
   enum_accessor :milk_amount, [:none, :a_bit, :a_third, :a_lot]
   enum_accessor :milk_type, [:regular, :slim, :soy]
   enum_accessor :sugar_amount, [0, 0.5, 1, 1.5, 2, 2.5]
@@ -12,16 +12,15 @@ class Drink < ActiveRecord::Base
   enum_accessor :strength, [:normal, :light, :strong]
   enum_accessor :tea_type, [:earl_grey, :green, :herbal]
   enum_accessor :water_type, [:still, :sparkling]
-  enum_accessor :soda_type, [:coke, :sprite, :fanta]
+  enum_accessor :soda_type, [:coke, :diet_coke, :coke_zero, :sprite, :fanta]
   enum_accessor :size, [:single, :double]
   enum_accessor :pod, [:any, :ristretto, :arpeggio, :roma, :livanto, :capriccio, :volluto, :cosi, :indriya, :rosabaya, :dulsao, :fortissio, :vivalto, :linizio]
-
-
 
   TYPES = {
       :coffee => [:strength, :milk_amount, :milk_type, :sugar_amount, :sugar_type],
       :iced_coffee => [:strength, :milk_amount, :milk_type, :sugar_amount, :sugar_type],
       :espresso => [:size, :pod, :milk_amount, :milk_type, :sugar_amount, :sugar_type],
+      :turkish => [:strength, :sugar_amount, :sugar_type],
       :tea => [:tea_type, :sugar_amount, :sugar_type],
       :water => [:water_type],
       :soda => [:soda_type],

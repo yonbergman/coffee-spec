@@ -65,6 +65,21 @@ $glass-color: #888;
       border-color: #ad8850;
     }
 
+    &.turkish{
+      $regular: #381f18;
+      $light: #522f21;
+      $strong: #1c0e0e;
+      &, &.regular{
+        border-color: $regular;
+      }
+      &.light{
+        border-color: $light;
+      }
+      &.strong{
+        border-color: $strong;
+      }
+    }
+
     &.tea{
       $earl-grey-tea-color: #b96044;
       $herbal-tea-color: #eb9696;
@@ -104,9 +119,9 @@ $glass-color: #888;
       $fanta-color: #F5C21B;
 
       @extend .soft-drink;
-      @extend .sparkling;
+//      @extend .sparkling;
 
-      &.coke{
+      &.coke, &.diet_coke, &.coke_zero{
         border-color: $coke-color;
       }
       &.sprite{
@@ -402,7 +417,7 @@ $glass-color: #888;
       }
     }
 
-    &.double{
+    &.double, &.turkish{
       .liquid{
         border-bottom-width: 40px;
         border-top-width: 40px;

@@ -1,7 +1,6 @@
 module DrinkHelper
   def drink_text(drink)
     DrinkTexter.new(drink).text
-
   end
 
   def is_iced(drink)
@@ -30,7 +29,7 @@ module DrinkHelper
   end
 
   def small_glass(drink)
-    drink.espresso? ? 'small' : ''
+    (drink.espresso? || drink.turkish?) ? 'small' : ''
   end
 
   def has_pod(drink)

@@ -17,7 +17,7 @@ gem 'bootswatch-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 
-gem 'debugger', group: [:development, :test]
+# gem 'debugger', group: [:development, :test]
 gem 'powder'
 
 gem 'omniauth'
@@ -29,6 +29,6 @@ gem 'enumify'
 gem 'quiet_assets'
 
 gem 'rails_12factor', group: :production
-gem 'compass-rails', '~> 2.0.alpha.0'
+gem 'compass-rails'
 
 
