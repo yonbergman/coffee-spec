@@ -4,10 +4,9 @@
 .container
   .heading
     - if poster_owner?
-      %h2.rest-in-place{data: {object: 'poster', attribute: 'name'}}
-        = @poster.name
+      %h2.rest-in-place{data: {object: 'poster', attribute: 'name'}}= @poster.name
     - else
-      %h2=@poster.name
+      %h2= @poster.name
     = link_to t('posters.show.print'), 'javascript:window.print();', class: 'btn'
 
   .drinks.inner-content
@@ -16,26 +15,23 @@
         %i.fa.fa-warning
         = t('drinks.empty')
     %ul
-      - if @poster.drinks.empty?
-        - if poster_owner?
-          = render 'posters/add_drink'
-      - else
-        - @poster.drinks.ordered.each do |drink|
-          %li
-            = render 'drinks/drink', :drink => drink
-        - if poster_owner?
-          = render 'posters/add_drink'
+      - @poster.drinks.ordered.each do |drink|
+        %li
+          = render 'drinks/drink', :drink => drink
+      - if poster_owner?
+        = render 'posters/add_drink'
+
   - if poster_owner?
     .links.center
-      = link_to t('posters.show.delete'), @poster, :method => :delete, :data => {:confirm => 'Are you sure?'}
+      = link_to t('posters.show.delete'), @poster, :method => :delete, :data => {:confirm => t('notice.are_you_sure')}
   - else
     .links.center
-      %strong Want to create your own Coffee poster?
+      %strong= t('posters.show.want_to_create_your_own')
       %br
       = link_to 'Sign in', sign_in_path, 'data-no-turbolink' => true
-      %span to start a new poster.
+      %span= t('posters.show.to_start')
   .built_with
-    %span This poster was created in
+    %span= t('posters.show.this_poster_was_created')
     = link_to t('site.url'), root_url
 
 

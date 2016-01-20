@@ -8,11 +8,14 @@ $footer-margin: 40px;
 $footer-height: 100px;
 
 
-html { height: 100%; }
+html {
+  height: 100%;
+}
 
 body{
   box-sizing: border-box;
   min-height: 100%;
+  width: 100%;
   position: relative;
   background: $color-bg;
   font-family: $font;
@@ -69,24 +72,6 @@ h2{
   line-height: 70px;
   font-weight: 200;
 }
-
-
-.content{
-  background: #fff;
-  box-shadow: 0px 2px 2px rgba(0,0,0,0.4);
-  width: 900px;
-  margin-top: 30px;
-  min-height: 350px;
-  margin: 30px auto 30px auto;
-  padding: 0 20px 20px 20px;
-
-  @include mobile{
-    width: 280px;
-    margin: 15px auto;
-    padding: 0 10px 20px 10px;
-  }
-}
-
 
 footer{
   position: absolute;
@@ -177,17 +162,9 @@ header nav{
   @include hide-for-print;
 }
 
-a.title-action{
-  @include hide-for-print;
-  font-size: 13px;
-  text-decoration: none;
-}
-
-
 .built_with{
   display: none;
   @include show-for-print;
-  margin-top: 20px;
   border-top: 1px solid #e0e0e0;
   padding-top: 20px;
   text-align: center;
@@ -217,6 +194,12 @@ a.title-action{
   margin: 0 auto;
   @media (screen and max-width: 960px) {
     margin: 0 10px;
+  }
+  @include print() {
+    margin: 0;
+    min-width: 880px;
+    width: 100%;
+    max-width: none;
   }
 }
 

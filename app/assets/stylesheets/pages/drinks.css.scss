@@ -3,10 +3,16 @@
   max-width: 960px;
   background: white;
   padding: 40px;
-  margin-bottom: 16px;
   box-shadow: 1px 1px 4px rgba(black, 0.5);
   border-radius: 2px;
+  @include print() {
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+    box-shadow: none;
+  }
   li{
+    display: inline-block;
     @include mobile{
       height: 110px;
       overflow: hidden;
@@ -26,9 +32,13 @@
   overflow: hidden;
   highlight: none;
   text-decoration: none;
-  width: 420px;
+  width: 410px;
+  @include print() {
+    width: 380px;
+  }
   height: 150px;
-  float: left;
+
+  //float: left;
 
   padding: 10px;
   cursor: pointer;
@@ -45,6 +55,9 @@
     margin-left: 50px;
     float: left;
     width: 250px;
+    @include print() {
+      width: 230px;
+    }
     padding-top: 30px;
 
   }

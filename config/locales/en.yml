@@ -12,6 +12,7 @@ en:
       delete: "Delete this drink"
     form:
       preview: "Preview Mode"
+    add_drink: "Add Drink"
   errors:
     not_found: "Sorry, but the page you're looking for isn't here"
     internal_error: "Oops; someone spilled some coffee on our servers"
@@ -42,11 +43,15 @@ en:
       new: "Create Spec"
     show:
       print: "Print Infographic"
-      delete: "Delete Poster"
+      delete: "Delete this Spec"
+      want_to_create_your_own: "Want to create your own Coffee poster?"
+      to_start: "to start a new poster."
+      this_poster_was_created: "This poster was created in"
   notice:
     poster:
       created: "Poster was successfully created."
       updated: "Poster was successfully updated."
       deleted: "Poster was successfully destroyed."
+    are_you_sure: "Are you sure?"
   site:
     url: "http://coffeespec.com"

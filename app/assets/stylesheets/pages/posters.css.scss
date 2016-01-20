@@ -7,10 +7,14 @@
     }
   }
   .btn {
-    text-align: right;
-    position: absolute;
-    right: 0;
-    bottom: 32px;
+    @media (screen and min-width: 720px) {
+      text-align: right;
+      position: absolute;
+      right: 0;
+      bottom: 32px;
+    }
+    display: inline-block;
+    margin-top: 8px;
     @include hide-for-print();
   }
   a {
@@ -25,9 +29,25 @@
   border-bottom: 1px solid #979797;
   margin-bottom: 32px;
   position: relative;
+  @include print() {
+    margin: 0;
+    padding: 8px 0;
+  }
+
 }
 
 .posters{
+  overflow: hidden;
+  .poster {
+    background: white;
+    box-shadow: 1px 1px 4px rgba(black, 0.5);
+    border-radius: 2px;
+    margin: 5px;
+    float: left;
+    width: 310px;
+    min-height: 240px;
+    text-align: center;
+  }
   li{
     cursor: pointer;
     overflow: hidden;
@@ -78,8 +98,8 @@
 
 .mini-drinks{
   display: inline-block;
-  height: 65px;
-  width: 50px * 12;
+  //height: 65px;
+  //width: 50px * 12;
   vertical-align: middle;
 
   .drinkContainer{

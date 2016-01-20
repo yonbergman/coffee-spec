@@ -7,7 +7,7 @@
     = link_to t('.new'), posters_path, method: :post, class: 'btn'
   %ul.posters.inner-content
     - @posters.each do |poster|
-      %li
+      %li.poster
         = link_to poster do
           %span
             = poster.name

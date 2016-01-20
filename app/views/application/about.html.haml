@@ -2,8 +2,11 @@
   .header-padder
   %h2= t('.tagline')
   %p.lead= t('.byline')
-  = link_to t('.cta'), sign_in_path(:facebook), :class => 'btn btn-primary', 'data-no-turbolink' => true
-  %small= t('.cta_help')
+  - if user_signed_in?
+    = link_to t('.cta'), posters_path, :class => 'btn btn-primary'
+  - else
+    = link_to t('.cta'), sign_in_path(:facebook), :class => 'btn btn-primary', 'data-no-turbolink' => true
+    %small= t('.cta_help')
   = link_to Coffeespec2::EXAMPLE, target: :_blank do
     .example
 
