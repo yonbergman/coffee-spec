@@ -4,3 +4,10 @@
     = link_to '@yonbergman', 'https://twitter.com/yonbergman', :rel => :external
     = t('.for_more_stuff')
     = link_to 'yonbergman.com', 'http://yonbergman.com', :rel => :external
+    - if current_page? root_path or current_page? about_path
+      %span.legal
+        %br
+        Icons by
+        <a href="http://www.toicon.com/authors/1" target="_blank">Shannon E Thomas</a>
+        and provided under Creative Commons from
+        <a href='http://toicon.com/'>to [icon]</a>.

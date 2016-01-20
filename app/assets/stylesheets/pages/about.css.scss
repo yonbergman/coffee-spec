@@ -1,9 +1,13 @@
 .top-row {
   background: image_url('bg.png') no-repeat;
+  background-color: #34342f;
   background-size: cover;
   color: white;
   text-align: center;
   height: 718px;
+  @include mobile() {
+    height: 600px;
+  }
   border-bottom: 1px solid #9CAFC3;
   overflow: hidden;
 
@@ -41,6 +45,10 @@
     margin: 0 auto;
     top: 50px;
     position: relative;
+    @include mobile() {
+      width: 260px;
+      height: 292px;
+    }
     &:after{
       content: 'View Example';
       position: absolute;
@@ -73,11 +81,20 @@
     line-height: 44px;
     text-align: center;
     margin: 75px;
+    @include mobile {
+      margin: 32px;
+    }
   }
   .features {
     overflow: hidden;
     max-width: 924px;
     margin: 0 auto;
+    @media (screen and max-width: 924px) {
+      max-width: 620px;
+    }
+    @include mobile {
+      margin: 16px;
+    }
   }
   .feature {
     font-size: 14px;
@@ -89,4 +106,11 @@
     img { float: left; margin-right: 20px;}
     p { position: relative; top: 7px; }
   }
+}
+.legal {
+  font-size: 11px;
+  letter-spacing: 0.81px;
+  line-height: 27px;
+  text-align: center;
+  color: rgba(black, 0.76);
 }

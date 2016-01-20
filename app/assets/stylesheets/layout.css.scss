@@ -69,8 +69,12 @@ h1{
 h2{
   text-align: center;
   font-size: 30px;
-  line-height: 70px;
+  line-height: 45px;
   font-weight: 200;
+  margin: 70px 0 15px 0;
+  @include mobile() {
+    margin-top: 35px;
+  }
 }
 
 footer{
@@ -86,6 +90,9 @@ footer{
   margin-top: $footer-margin;
   box-sizing: border-box;
   display: table;
+  @include mobile() {
+    padding: 16px;
+  }
   > span {
     display: table-cell;
     vertical-align: middle;

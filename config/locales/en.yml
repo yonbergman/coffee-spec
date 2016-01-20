@@ -1,6 +1,6 @@
 en:
-  title: "Coffee.spec"
-  description: 'Create stunning personalized coffee posters for your office'
+  title: "Coffee|spec"
+  description: 'Look out for your coworkers. Create awesome printable coffee infographics detailing how you all take your coffee.'
 
   drinks:
     empty: 'No drinks have been added yet'

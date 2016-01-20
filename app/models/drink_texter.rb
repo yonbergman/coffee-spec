@@ -39,7 +39,7 @@ class DrinkTexter
   def espresso_text
     t = ''
     t += 'Double' if drink.size == 'double'
-    t += drink.length.titleize unless drink.length.presence == 'normal'
+    t += drink.length.titleize unless drink.length.nil? or drink.length == 'normal'
     t += ' Espresso'
     t += " (#{drink.pod.titleize}) " unless drink.pod.nil? or drink.pod == 'any'
     milk = milk_text
