@@ -1,10 +1,41 @@
+$color-bg: #EDEFF3;
+$color-primary: #EA7A17;
+$color-text: #4A4A4A;
+$font: "Lato","Helvetica Neue", "Helvetica", "Arial", san-serif;
+
+$header-height: 82px;
+$footer-margin: 40px;
+$footer-height: 100px;
+
+
+html, body {
+  min-height: 100%;
+  position: relative;
+}
+
 body{
-  background: #e5e5e5;
-  font-family: "Helvetica Neue", "Helvetica", "Arial", san-serif;
+  background: $color-bg;
+  font-family: $font;
   color: #444;
   font-size: 13px;
   line-height: normal;
-  //line-height: 18px;
+}
+
+.header-padder {
+  height: $header-height;
+  width: 1px;
+}
+
+header {
+  width: 100%;
+  height: $header-height;
+  background: rgba(black, 0.38);
+  color: white;
+  padding: 11px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 a{
@@ -22,9 +53,13 @@ strong{
 
 h1{
   text-align: center;
-  font-size: 40px;
-  font-weight: normal;
-  line-height: 72px;
+  font-size: 44px;
+  color: #FFFFFF;
+  line-height: 60px;
+  font-weight: 200;
+  em {
+    color: $color-primary;
+  }
 }
 
 h2{
@@ -52,27 +87,40 @@ h2{
 }
 
 
-header{
-  border-bottom: 1px solid #444;
-  overflow: hidden;
-  position: relative;
-}
-
 footer{
+  background: white;
+  color: $color-text;
   text-align: center;
-  padding-bottom: 10px;
-  @include mobile{
-    width: 250px;
-    margin: 0 auto;
-  }
+  height: $footer-height;
+  font-size: 14px;
+  line-height: $footer-height;
+  margin-top: $footer-margin;
 }
 
-.user-dashboard{
+header nav{
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 33px;
+  right: 20px;
   @include hide-for-print;
   @include hide-for-mobile;
+
+  a {
+    font-size: 12px;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    &:hover {
+      background: none;
+    }
+    &.user-action {
+      border: 2px solid white;
+      border-radius: 2px;
+      padding: 8px 21px;
+      margin-left: 10px;
+    }
+  }
 }
 
 #notice{

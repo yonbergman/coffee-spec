@@ -1,3 +1,95 @@
+.top-row {
+  background: image_url('bg.png') no-repeat;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  height: 718px;
+  border-bottom: 1px solid #9CAFC3;
+  overflow: hidden;
+
+  .lead {
+    font-size: 20px;
+    color: rgba(255,255,255,0.76);
+    line-height: 27px;
+    max-width: 600px;
+    margin: 20px auto 40px auto;
+  }
+
+  .btn {
+    width: 246px;
+    margin: 0px auto;
+    display: block;
+    background: #EA7A17;
+    padding: 10px 46px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    color: #FBFBFB;
+    letter-spacing: 1px;
+    line-height: 27px;
+  }
+  small {
+    font-size: 13px;
+    letter-spacing: 0.81px;
+    line-height: 27px;
+  }
+  .example {
+    background: image_url('example.png') no-repeat;
+    background-size: 100%;
+    height: 585px;
+    width: 520px;
+    margin: 0 auto;
+    top: 50px;
+    position: relative;
+    &:after{
+      content: 'View Example';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(white, 0.75);
+      opacity: 0;
+      transition: opacity 200ms;
+      font-size: 52px;
+      color: black;
+      line-height: 400px;
+    }
+    transition: top 200ms;
+    &:hover {
+      top: 20px;
+      &:after {
+        opacity: 1;
+      }
+
+    }
+  }
+}
+
+.bottom-row {
+  h3 {
+    font-size: 32px;
+    color: #5C5C5C;
+    line-height: 44px;
+    text-align: center;
+    margin: 75px;
+  }
+  .features {
+    overflow: hidden;
+    max-width: 924px;
+    margin: 0 auto;
+  }
+  .feature {
+    font-size: 14px;
+    color: #4A4A4A;
+    line-height: 19px;
+    float: left;
+    width: 308px;
+    height: 100px;
+    img { float: left; margin-right: 20px;}
+    p { position: relative; top: 7px; }
+  }
+}
 .root{
   padding: 10px;
   font-size: 20px;

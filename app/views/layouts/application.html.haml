@@ -9,6 +9,7 @@
     %meta{:property => 'og:description', :content => I18n.t('description')}
     %meta{:property => 'og:image', :content => image_url('sample-poster.png')}
     %link{:href => '/favicon.ico', :rel => 'shortcut icon'}
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin' rel='stylesheet' type='text/css'>
     = yield :meta_tags
     = csrf_meta_tags
     = stylesheet_link_tag :application
@@ -16,7 +17,6 @@
     = javascript_include_tag :application
     = render 'layouts/google_analytics'
   %body
-    .content
-      = render 'layouts/header'
-      = yield
+    = render 'layouts/header'
+    = yield
     = render 'layouts/footer'

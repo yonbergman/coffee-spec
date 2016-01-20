@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   include UserSupport
 
-  def root
+  def about
   end
 
 end

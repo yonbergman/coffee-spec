@@ -9,3 +9,23 @@ en:
     not_found: "Sorry, but the page you're looking for isn't here"
     internal_error: "Oops; someone spilled some coffee on our servers"
     no_permission: "You're not allowed to peek here"
+  layouts:
+    header:
+      title: "Coffee<em>spec</em>"
+    footer:
+      created_by: "Created & Designed by"
+      for_more_stuff: "• Find more stuff on my blog"
+  application:
+    about:
+      tagline: "Always get your coffee just the way you like it."
+      byline: "Look out for your coworkers. Create awesome printable coffee infographics detailing how you all take your coffee."
+      cta: "Create Spec"
+      cta_help: "Sign in with Facebook"
+      subtitle: "Coffeespec features"
+      features:
+        - "Easily create a personalized coffee infographic for you and your co-workers."
+        - "Print your infographic and hang it by the office coffee machine."
+        - "Leave no tea drinkers behind - includes tea, water & soft drinks."
+        - "Share your sipping style with the world. Post public links to your office’s poster online."
+        - "Help promote office relationships and never drink alone."
+        - "Any style goes! It does not matter if you brew, filter, boil or buy."

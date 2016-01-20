@@ -13,7 +13,8 @@ Coffeespec2::Application.routes.draw do
   get '/auth/sign_out', :to => 'session#destroy', :as => 'sign_out'
   get '/auth/:provider', :to => 'session#nothing', :as => 'sign_in', :defaults => { :provider => 'facebook' }
 
-  root :to => 'application#root'
+  get 'about' => 'application#about'
+  root :to => 'application#about'
 
 
   get '404', :to => 'static#not_found'

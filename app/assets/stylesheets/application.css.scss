@@ -2,6 +2,7 @@
 
 @include global-reset;
 
+
 @import 'mixins';
 @import 'form';
 @import 'layout';
@@ -9,4 +10,4 @@
 @import 'pages/drinks';
 @import 'pages/posters';
 @import 'pages/error';
-@import 'pages/root';
+@import 'pages/about';

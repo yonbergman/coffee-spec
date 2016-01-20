@@ -119,7 +119,6 @@ $glass-color: #888;
       $fanta-color: #F5C21B;
 
       @extend .soft-drink;
-//      @extend .sparkling;
 
       &.coke, &.diet_coke, &.coke_zero{
         border-color: $coke-color;
@@ -284,7 +283,6 @@ $glass-color: #888;
     .bubble-2{
       width: 10px;
       height: 10px;
-      //@include box-sizing(border-box);
       border: 4px solid white;
       border-radius: 80px;
       left: 30px;
