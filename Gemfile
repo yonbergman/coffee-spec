@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.1'
+ruby '2.1.8'
 
 gem 'rails', '4.0.0'
 
@@ -33,5 +33,3 @@ gem 'quiet_assets'
 
 gem 'rails_12factor', group: :production
 gem 'compass-rails'
-
-
