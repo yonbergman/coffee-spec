@@ -1,4 +1,5 @@
 class StaticController < ApplicationController
+
   def not_found
     error(404)
   end

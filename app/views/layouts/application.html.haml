@@ -1,21 +1,7 @@
 !!! 5
-%html.no-js{:lang => 'en'}
+%html{:lang => 'en'}
   %head
-    %meta{:charset => 'utf-8'}
-    %title= title
-    %meta{:name => 'description', :content => I18n.t('description')}
-    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1'}
-    %meta{:property => 'og:title', :content => title}
-    %meta{:property => 'og:description', :content => I18n.t('description')}
-    %meta{:property => 'og:image', :content => image_url('sample-poster.png')}
-    %link{:href => '/favicon.ico', :rel => 'shortcut icon'}
-    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin' rel='stylesheet' type='text/css'>
-    = yield :meta_tags
-    = csrf_meta_tags
-    = stylesheet_link_tag :application
-    = stylesheet_link_tag :application, :media => :print
-    = javascript_include_tag :application
-    = render 'layouts/google_analytics'
+    = render 'layouts/head'
   %body
     = render 'layouts/header'
     = yield
