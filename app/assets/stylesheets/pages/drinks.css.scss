@@ -12,7 +12,6 @@
     box-shadow: none;
   }
   li{
-    display: inline-block;
     @include mobile{
       height: 110px;
       overflow: hidden;
@@ -37,8 +36,7 @@
     width: 380px;
   }
   height: 150px;
-
-  //float: left;
+  float: left;
 
   padding: 10px;
   cursor: pointer;
