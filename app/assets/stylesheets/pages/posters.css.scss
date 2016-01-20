@@ -1,3 +1,32 @@
+.heading {
+  h2 {
+    text-align: left;
+    line-height: 45px;
+    @include print() {
+      text-align: center;
+    }
+  }
+  .btn {
+    text-align: right;
+    position: absolute;
+    right: 0;
+    bottom: 32px;
+    @include hide-for-print();
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+      background: clear;
+    }
+  }
+  margin-top: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #979797;
+  margin-bottom: 32px;
+  position: relative;
+}
+
 .posters{
   li{
     cursor: pointer;

@@ -1,6 +1,6 @@
 Coffeespec2::Application.routes.draw do
 
-  resources :posters do
+  resources :posters, except: [:new, :edit] do
     resources :drinks do
       collection do
         get :preview
@@ -14,7 +14,7 @@ Coffeespec2::Application.routes.draw do
   get '/auth/:provider', :to => 'session#nothing', :as => 'sign_in', :defaults => { :provider => 'facebook' }
 
   get 'about' => 'application#about'
-  root :to => 'application#about'
+  root :to => 'application#root'
 
 
   get '404', :to => 'static#not_found'

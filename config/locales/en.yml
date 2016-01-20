@@ -5,6 +5,13 @@ en:
   drinks:
     empty: 'No drinks have been added yet'
 
+    default_name: "Company Coffee"
+    new:
+      new: "New Drink"
+    edit:
+      delete: "Delete this drink"
+    form:
+      preview: "Preview Mode"
   errors:
     not_found: "Sorry, but the page you're looking for isn't here"
     internal_error: "Oops; someone spilled some coffee on our servers"
@@ -29,3 +36,17 @@ en:
         - "Share your sipping style with the world. Post public links to your office’s poster online."
         - "Help promote office relationships and never drink alone."
         - "Any style goes! It does not matter if you brew, filter, boil or buy."
+  posters:
+    index:
+      title: "My Specs"
+      new: "Create Spec"
+    show:
+      print: "Print Infographic"
+      delete: "Delete Poster"
+  notice:
+    poster:
+      created: "Poster was successfully created."
+      updated: "Poster was successfully updated."
+      deleted: "Poster was successfully destroyed."
+  site:
+    url: "http://coffeespec.com"

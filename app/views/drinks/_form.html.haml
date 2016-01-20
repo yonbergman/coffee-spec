@@ -5,7 +5,10 @@
       %ul
         - @drink.errors.full_messages.each do |msg|
           %li= msg
-  = render 'drinks/image', :drink => @drink
+  .right
+    = render 'drinks/image', :drink => @drink
+    - if @preview
+      #preview= t('.preview')
   .field
     = f.label :name
     = f.text_field :name, :placeholder => 'Person\'s name'
@@ -18,6 +21,4 @@
       = f.select field, select_options(drink_options(field))
 
   .actions
-    = f.submit 'Save'
-    - if @preview
-      #preview Preview Mode • Click Save to update drink
+    = f.submit 'Save', class: 'btn sm'

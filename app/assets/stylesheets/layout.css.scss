@@ -8,25 +8,30 @@ $footer-margin: 40px;
 $footer-height: 100px;
 
 
-html, body {
-  min-height: 100%;
-  position: relative;
-}
+html { height: 100%; }
 
 body{
+  box-sizing: border-box;
+  min-height: 100%;
+  position: relative;
   background: $color-bg;
   font-family: $font;
   color: #444;
   font-size: 13px;
   line-height: normal;
+  padding-bottom: $footer-height + $footer-margin;
 }
 
 .header-padder {
   height: $header-height;
-  width: 1px;
+  width: 100%;
+  &.darker {
+    background: rgba(black, 0.5);
+  }
 }
 
 header {
+  a { text-decoration: none; }
   width: 100%;
   height: $header-height;
   background: rgba(black, 0.38);
@@ -40,10 +45,6 @@ header {
 
 a{
   color: #222;
-  &:hover{
-    color: #fff;
-    background-color: #222;
-  }
 }
 
 strong{
@@ -88,13 +89,22 @@ h2{
 
 
 footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
   background: white;
   color: $color-text;
   text-align: center;
   height: $footer-height;
   font-size: 14px;
-  line-height: $footer-height;
+  width: 100%;
   margin-top: $footer-margin;
+  box-sizing: border-box;
+  display: table;
+  > span {
+    display: table-cell;
+    vertical-align: middle;
+  }
 }
 
 header nav{
@@ -124,19 +134,18 @@ header nav{
 }
 
 #notice{
-  background: #5BDD5B;
+  background: #64d2a3;
   padding: 8px;
   color: #FFF;
   border-radius: 3px;
   @include hide-for-print;
-  margin: 5px 0;
+  margin-bottom: 10px;
+  text-align: center;
   .hide-notice{
     float: right;
     margin-right: 10px;
-    border-radius: 20px;
     width: 15px;
     height: 15px;
-    background: rgba(255,255,255, 0.2);
     text-align: center;
     cursor: pointer;
   }
@@ -151,20 +160,14 @@ header nav{
   margin: 5px 0;
 }
 
-#preview{
-  background: #a4a4a4;
-  padding: 2px 6px;
-  color: #FFF;
-  border-radius: 3px;
-  display: inline-block;
-  @include hide-for-print;
-}
+
 
 .links{
   @include hide-for-print;
-  margin-top: 20px;
-  border-top: 1px solid #e0e0e0;
   padding-top: 20px;
+  font-size: 14px;
+  color: #4A4A4A;
+  line-height: 19px;
   &.center{
     text-align: center;
   }
@@ -188,4 +191,41 @@ a.title-action{
   border-top: 1px solid #e0e0e0;
   padding-top: 20px;
   text-align: center;
+}
+
+.btn {
+  margin: 0px auto;
+  border: none;
+  background: #EA7A17;
+  padding: 10px 46px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  color: #FBFBFB;
+  letter-spacing: 1px;
+  line-height: 27px;
+  &:hover {
+    background: #c06313;
+  }
+  &.sm {
+    padding: 5px 24px;
+  }
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  @media (screen and max-width: 960px) {
+    margin: 0 10px;
+  }
+}
+
+h2.rest-in-place {
+  &:after {
+    content: "\f044";
+    @extend .fa;
+    font-size: 0.6em;
+    margin-left: 6px;
+    @include hide-for-print();
+  }
 }

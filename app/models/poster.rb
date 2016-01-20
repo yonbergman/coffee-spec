@@ -16,6 +16,7 @@ class Poster < ActiveRecord::Base
   private
 
   def defaults
+    self.name   ||= I18n.translate('drinks.default_name')
     self.token  ||= SecureRandom.urlsafe_base64(TOKEN_LENGTH)
   end
 

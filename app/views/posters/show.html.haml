@@ -1,39 +1,41 @@
-- if notice
-  #notice
-    = notice
-    .hide-notice X
-%h2
-  = @poster.name
-  - if poster_owner?
-    = link_to '(rename)', edit_poster_path(@poster), :class => 'title-action'
-.drinks.inner-content
-  %ul
-    - if @poster.drinks.empty?
-      - if poster_owner?
-        = render 'posters/add_drink'
-      - else
-        %li= t('drinks.empty')
+.header-padder.darker
+= render 'layouts/notice'
+
+.container
+  .heading
+    - if poster_owner?
+      %h2.rest-in-place{data: {object: 'poster', attribute: 'name'}}
+        = @poster.name
     - else
-      - @poster.drinks.ordered.each do |drink|
-        %li
-          = render 'drinks/drink', :drink => drink
-      - if poster_owner?
-        = render 'posters/add_drink'
-- if poster_owner?
-  .links
-    = link_to 'Print Infographic', 'javascript:window.print();'
-    %span •
-    = link_to 'Share on Facebook', share_url, :target => :_blank
-    %span •
-    = link_to 'Delete Poster', @poster, :method => :delete, :data => {:confirm => 'Are you sure?'}
-    %span •
-    = link_to 'All Posters', posters_path
-- else
-  .links.center
-    %strong Want to create your own Coffee poster?
-    %br
-    = link_to 'Sign in', sign_in_path, 'data-no-turbolink' => true
-    %span to start a new poster.
-.built_with
-  %span This poster was created in
-  = link_to 'http://coffeespec.com', root_url
+      %h2=@poster.name
+    = link_to t('posters.show.print'), 'javascript:window.print();', class: 'btn'
+
+  .drinks.inner-content
+    - if @poster.drinks.empty? and not poster_owner?
+      .empty-list
+        %i.fa.fa-warning
+        = t('drinks.empty')
+    %ul
+      - if @poster.drinks.empty?
+        - if poster_owner?
+          = render 'posters/add_drink'
+      - else
+        - @poster.drinks.ordered.each do |drink|
+          %li
+            = render 'drinks/drink', :drink => drink
+        - if poster_owner?
+          = render 'posters/add_drink'
+  - if poster_owner?
+    .links.center
+      = link_to t('posters.show.delete'), @poster, :method => :delete, :data => {:confirm => 'Are you sure?'}
+  - else
+    .links.center
+      %strong Want to create your own Coffee poster?
+      %br
+      = link_to 'Sign in', sign_in_path, 'data-no-turbolink' => true
+      %span to start a new poster.
+  .built_with
+    %span This poster was created in
+    = link_to t('site.url'), root_url
+
+

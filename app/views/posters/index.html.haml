@@ -1,15 +1,18 @@
-%h2 Your Posters
-%ul.posters.inner-content
-  - @posters.each do |poster|
-    %li
-      = link_to poster do
-        %span
-          = poster.name
-          %small= "(#{pluralize(poster.drinks.count, 'drink')})"
-        .mini-drinks
-          - poster.drinks.each do |drink|
-            .drinkContainer
-              = render 'drinks/image', :drink => drink
+.header-padder.darker
+= render 'layouts/notice'
 
-.links
-  = link_to 'New Poster', new_poster_path
+.container
+  .heading
+    %h2= t('.title')
+    = link_to t('.new'), posters_path, method: :post, class: 'btn'
+  %ul.posters.inner-content
+    - @posters.each do |poster|
+      %li
+        = link_to poster do
+          %span
+            = poster.name
+            %small= "(#{pluralize(poster.drinks.count, 'drink')})"
+          .mini-drinks
+            - poster.drinks.each do |drink|
+              .drinkContainer
+                = render 'drinks/image', :drink => drink

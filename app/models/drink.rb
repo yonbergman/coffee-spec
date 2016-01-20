@@ -14,12 +14,13 @@ class Drink < ActiveRecord::Base
   enum_accessor :water_type, [:still, :sparkling]
   enum_accessor :soda_type, [:coke, :diet_coke, :coke_zero, :sprite, :fanta]
   enum_accessor :size, [:single, :double]
+  enum_accessor :length, [:normal, :long]
   enum_accessor :pod, [:any, :kazaar, :dharkan, :ristretto, :arpeggio, :roma, :livanto, :capriccio, :volluto, :cosi, :indriya, :rosabaya, :dulsao, :fortissio, :vivalto, :linizio]
 
   TYPES = {
       :coffee => [:strength, :milk_amount, :milk_type, :sugar_amount, :sugar_type],
       :iced_coffee => [:strength, :milk_amount, :milk_type, :sugar_amount, :sugar_type],
-      :espresso => [:size, :pod, :milk_amount, :milk_type, :sugar_amount, :sugar_type],
+      :espresso => [:length, :size, :pod, :milk_amount, :milk_type, :sugar_amount, :sugar_type],
       :turkish => [:strength, :sugar_amount, :sugar_type],
       :tea => [:tea_type, :sugar_amount, :sugar_type],
       :water => [:water_type],

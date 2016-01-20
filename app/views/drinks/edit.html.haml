@@ -1,7 +1,13 @@
-%h2 Update Drink
-= render 'form'
+.header-padder.darker
+= render 'layouts/notice'
 
-.links
-  = link_to 'Delete', [@poster, @drink], :method => :delete, :data => {:confirm => 'Are you sure?'}
-  %span •
-  = link_to 'Back', @poster
+.container
+  .heading
+    %h2
+      = link_to @poster.name, current_poster
+      %i.fa.fa-angle-right
+      = @drink.name
+  .drinks.inner-content
+    = render 'form'
+  .links.center
+    = link_to t('drinks.edit.delete'), [@poster, @drink], :method => :delete, :data => {:confirm => 'Are you sure?'}

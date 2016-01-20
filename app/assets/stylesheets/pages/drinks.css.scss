@@ -1,10 +1,23 @@
 .drinks{
   overflow: hidden;
+  max-width: 960px;
+  background: white;
+  padding: 40px;
+  margin-bottom: 16px;
+  box-shadow: 1px 1px 4px rgba(black, 0.5);
+  border-radius: 2px;
   li{
     @include mobile{
       height: 110px;
       overflow: hidden;
     }
+  }
+  .empty-list {
+    font-weight: 200;
+    font-size: 28px;
+    color: #FF3A3A;
+    text-align: center;
+    line-height: 190px;
   }
 }
 
@@ -70,16 +83,4 @@
     top: 18px;
   }
   @include hide-for-print;
-}
-
-
-form .drink{
-  float: right;
-  margin-right: 40px;
-
-  @include mobile{
-    display: none;
-    float: none;
-    margin: 0;
-  }
 }

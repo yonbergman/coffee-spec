@@ -38,12 +38,14 @@ class DrinkTexter
 
   def espresso_text
     t = ''
-    t += 'Double ' if drink.size == 'double'
-    t += 'Espresso'
+    t += 'Double' if drink.size == 'double'
+    t += drink.length.titleize unless drink.length.presence == 'normal'
+    t += ' Espresso'
     t += " (#{drink.pod.titleize}) " unless drink.pod.nil? or drink.pod == 'any'
     milk = milk_text
     t += milk unless milk == ', No Milk'
     t += sugar_text
+    t.strip
   end
 
   def turkish_text

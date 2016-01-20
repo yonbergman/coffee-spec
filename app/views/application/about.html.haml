@@ -14,35 +14,3 @@
       .feature
         = image_tag("ic#{i}.png")
         %p= content
-
--#.root
--#  .text
--#    %h2 Create stunning coffee posters for your office
--#    %h3
--#      With
--#      %strong Coffee.spec
--#      you can...
--#    %ul
--#      %li Easily create a personalized coffee infographic for you and your co-workers
--#      %li Print the poster and hang it in the office kitchen
--#      %li Include people who don't drink coffee by adding tea, water & soft drinks
--#      %li Share your digital posters on Facebook
--#      %li
--#        %strong Get your coffee - just the way you like it
--#
--#    .links
--#      - if user_signed_in?
--#        %p= link_to 'View your posters', posters_path
--#
--#
--#      - else
--#        %p
--#          Sign in to create your first Coffee.spec poster
--#          %small (So you can return to your poster whenever you want to)
--#
--#          = link_to sign_in_path(:facebook), :class => 'fb-link', 'data-no-turbolink' => true do
--#            = image_tag('fb-btn.png', height: 37, width: 186)
--#  .sample
--#    = link_to 'http://coffee-spec.herokuapp.com/posters/wwtdUVkKXAQ' do
--#      .poster-image
--#      %span VIEW SAMPLE POSTER

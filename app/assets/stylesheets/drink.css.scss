@@ -415,6 +415,20 @@ $glass-color: #888;
       }
     }
 
+    &.long{
+      .liquid{
+        border-bottom-width: 30px;
+        border-top-width: 50px;
+      }
+      .sugars{
+        top: 125px;
+      }
+
+      .milk{
+        bottom: -60px;
+      }
+    }
+
     &.double, &.turkish{
       .liquid{
         border-bottom-width: 40px;

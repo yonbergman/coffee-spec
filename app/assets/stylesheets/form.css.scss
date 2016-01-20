@@ -13,10 +13,29 @@ form{
     margin-top: 5px;
     padding-left: 108px;
   }
+  .right {
+    width: 200px;
+    float: right;
+    margin-right: 40px;
+    .drink {
+      left: 25%;
+    }
+
+    @include mobile {
+      display: none;
+      float: none;
+      margin: 0;
+    }
+  }
+
 }
 
 .drink-form{
   @include min-height(150px);
+  input, select {
+    width: 200px;
+    box-sizing: border-box;
+  }
 }
 
 .field_with_errors {
@@ -24,4 +43,16 @@ form{
   input, select{
     border: 2px solid red;
   }
+}
+
+#preview{
+  text-align: center;
+  background: #a4a4a4;
+  padding: 2px 6px;
+  color: #FFF;
+  border-radius: 3px;
+  width: 200px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  @include hide-for-print;
 }

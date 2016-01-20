@@ -65,6 +65,8 @@ GEM
     faraday (0.8.7)
       multipart-post (~> 1.1)
     ffi (1.9.6)
+    font-awesome-rails (4.0.3.1)
+      railties (>= 3.2, < 5.0)
     haml (4.0.3)
       tilt
     hashie (2.0.5)
@@ -128,6 +130,8 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    rest_in_place (2.5.0)
+      rails (>= 3.1)
     sass (3.4.10)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -169,6 +173,7 @@ DEPENDENCIES
   compass-rails
   controller_support
   enumify
+  font-awesome-rails
   haml
   jquery-rails
   omniauth
@@ -178,6 +183,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.0.0)
   rails_12factor
+  rest_in_place
   sass-rails (~> 4.0.0)
   thin
   turbolinks

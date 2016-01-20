@@ -1,5 +1,11 @@
-%h2 New Drink
-= render 'form'
+.header-padder.darker
+= render 'layouts/notice'
 
-.links
-  = link_to 'Back', current_poster
+.container
+  .heading
+    %h2
+      = link_to @poster.name, current_poster
+      %i.fa.fa-angle-right
+      = t('.new')
+  .drinks.inner-content
+    = render 'form'
