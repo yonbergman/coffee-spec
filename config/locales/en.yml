@@ -1,10 +1,12 @@
 en:
   title: "Coffeespec"
   description: 'Look out for your coworkers. Create awesome printable coffee infographics detailing how you all take your coffee.'
-
+  pageerrors:
+    e404: "Sorry, but the page you're looking for isn't here"
+    e500: "Oops; someone spilled some coffee on our servers"
+    e403: "You're not allowed to peek here"
   drinks:
     empty: 'No drinks have been added yet'
-
     default_name: "Company Coffee"
     new:
       new: "New Drink"
@@ -13,10 +15,6 @@ en:
     form:
       preview: "Preview Mode"
     add_drink: "Add Drink"
-  errors:
-    404: "Sorry, but the page you're looking for isn't here"
-    500: "Oops; someone spilled some coffee on our servers"
-    403: "You're not allowed to peek here"
   layouts:
     header:
       title: "Coffee<em>spec</em>"
