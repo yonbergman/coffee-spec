@@ -5,6 +5,9 @@
     margin-right: 5px;
     text-align: right;
     display: inline-block;
+    @include mobile() {
+      text-align: left;
+    }
   }
 }
 
@@ -12,6 +15,9 @@ form{
   .actions{
     margin-top: 5px;
     padding-left: 108px;
+    @include mobile() {
+      padding-left: 0;
+    }
   }
   .right {
     width: 200px;

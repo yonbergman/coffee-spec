@@ -11,6 +11,13 @@
   border-bottom: 1px solid #9CAFC3;
   overflow: hidden;
 
+  h2{
+    margin: 70px 0 15px 0;
+    @include mobile() {
+      margin-top: 35px;
+    }
+  }
+
   .lead {
     font-size: 20px;
     color: rgba(255,255,255,0.76);

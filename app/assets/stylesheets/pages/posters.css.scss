@@ -60,7 +60,7 @@
 
     a{
       display: block;
-      height: 80px;
+      height: 240px;
       text-decoration: none;
       &:hover{
         background: none;
@@ -68,7 +68,7 @@
       }
 
       @include mobile{
-        height: auto;
+
       }
     }
 
@@ -90,16 +90,10 @@
       font-size: 12px;
     }
   }
-
-  .mini-drinks{
-    @include hide-for-mobile;
-  }
 }
 
 .mini-drinks{
   display: inline-block;
-  //height: 65px;
-  //width: 50px * 12;
   vertical-align: middle;
 
   .drinkContainer{

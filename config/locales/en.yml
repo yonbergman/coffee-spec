@@ -36,7 +36,7 @@ en:
         - "Easily create a personalized coffee infographic for you and your co-workers."
         - "Print your infographic and hang it by the office coffee machine."
         - "Leave no tea drinkers behind - includes tea, water & soft drinks."
-        - "Share your sipping style with the world. Post public links to your office’s poster online."
+        - "Share your sipping style with the world. Post public links to your office’s spec online."
         - "Help promote office relationships and never drink alone."
         - "Any style goes! It does not matter if you brew, filter, boil or buy."
   posters:
@@ -46,14 +46,14 @@ en:
     show:
       print: "Print Infographic"
       delete: "Delete this Spec"
-      want_to_create_your_own: "Want to create your own Coffee poster?"
-      to_start: "to start a new poster."
-      this_poster_was_created: "This poster was created in"
+      want_to_create_your_own: "Want to create your own Coffeespec?"
+      to_start: "to create a new spec."
+      this_poster_was_created: "This spec was created using"
   notice:
     poster:
-      created: "Poster was successfully created."
-      updated: "Poster was successfully updated."
-      deleted: "Poster was successfully destroyed."
+      created: "coffeespec was successfully created."
+      updated: "coffeespec was successfully updated."
+      deleted: "coffeespec was successfully destroyed."
     are_you_sure: "Are you sure?"
   site:
     url: "http://coffeespec.com"
