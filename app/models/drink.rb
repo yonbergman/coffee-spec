@@ -6,7 +6,7 @@ class Drink < ActiveRecord::Base
 
   enum :kind, [:coffee, :iced_coffee, :espresso, :turkish, :tea, :water, :soda]
   enum_accessor :milk_amount, [:none, :a_bit, :a_third, :a_lot]
-  enum_accessor :milk_type, [:regular, :slim, :soy]
+  enum_accessor :milk_type, [:regular, :slim, :soy, :almond, :rice, :hazelnut]
   enum_accessor :sugar_amount, [0, 0.5, 1, 1.5, 2, 2.5]
   enum_accessor :sugar_type, [:regular, :brown, :artificial_sweetener]
   enum_accessor :strength, [:normal, :light, :strong, :decaf]

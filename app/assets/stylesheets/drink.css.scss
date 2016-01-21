@@ -135,7 +135,7 @@ $glass-color: #888;
 
   .milk{
     $regular: #fff;
-    $slim: rgba(255, 255, 255, 0.8);
+    $slim: rgba(255, 255, 255, 0.9);
     $soy: #fafad2;
 
     width: $liquid-width;
@@ -161,10 +161,10 @@ $glass-color: #888;
     &.regular{
       border-color: $regular
     }
-    &.slim{
+    &.slim {
       border-color: $slim;
     }
-    &.soy{
+    &.soy, &.almond, &.rice, &.hazelnut {
       border-color: $soy;
     }
   }

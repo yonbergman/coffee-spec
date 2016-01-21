@@ -5,7 +5,7 @@ gem 'rails', '4.0.0'
 
 gem 'pg'
 gem 'haml'
-gem 'thin'
+gem 'puma'
 
 
 gem 'sass-rails', '~> 4.0.0'

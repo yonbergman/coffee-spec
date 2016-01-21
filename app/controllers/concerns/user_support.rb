@@ -28,6 +28,7 @@ module UserSupport
   private
 
   def load_user
+    return nil if session[:uuid].blank?
     User.where(:provider => session[:provider], :uuid => session[:uuid]).first
   end
 end
