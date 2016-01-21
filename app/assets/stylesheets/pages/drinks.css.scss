@@ -24,6 +24,7 @@
     text-align: center;
     line-height: 190px;
   }
+
 }
 
 .drinkEl{
@@ -34,7 +35,9 @@
   width: 410px;
   @include print() {
     width: 380px;
+    page-break-inside: avoid;
   }
+
   height: 150px;
   float: left;
 
