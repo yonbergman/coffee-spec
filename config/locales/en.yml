@@ -14,9 +14,9 @@ en:
       preview: "Preview Mode"
     add_drink: "Add Drink"
   errors:
-    not_found: "Sorry, but the page you're looking for isn't here"
-    internal_error: "Oops; someone spilled some coffee on our servers"
-    no_permission: "You're not allowed to peek here"
+    404: "Sorry, but the page you're looking for isn't here"
+    500: "Oops; someone spilled some coffee on our servers"
+    403: "You're not allowed to peek here"
   layouts:
     header:
       title: "Coffee<em>spec</em>"
