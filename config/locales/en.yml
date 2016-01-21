@@ -18,6 +18,10 @@ en:
   layouts:
     header:
       title: "Coffee<em>spec</em>"
+      about: 'About'
+      sign_in: 'sign in'
+      sign_out: 'sign out'
+      sign_up: 'sign up'
     footer:
       created_by: "Created & Designed by"
       for_more_stuff: "• Find more stuff on my blog"

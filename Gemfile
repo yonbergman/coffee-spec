@@ -8,11 +8,12 @@ gem 'haml'
 gem 'puma'
 
 
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 4.0.5'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'bootswatch-rails'
-# gem 'autoprefixer-rails'
+gem 'normalize-rails'
+gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
 
 gem 'jquery-rails'
@@ -32,4 +33,4 @@ gem 'enumify'
 gem 'quiet_assets'
 
 gem 'rails_12factor', group: :production
-gem 'compass-rails'
+# gem 'compass-rails'

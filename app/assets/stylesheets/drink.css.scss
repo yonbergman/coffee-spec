@@ -17,7 +17,7 @@ $glass-color: #888;
   width: $glass-margin * 2 + $liquid-width;
   height: $glass-margin * 2 + $liquid-height;
   border-bottom: $glass-margin * 2 + $liquid-height solid $glass-color;
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 
@@ -32,7 +32,7 @@ $glass-color: #888;
 
   .liquid{
 
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     position: absolute;
     border-bottom: $liquid-height solid #000;
     width: $liquid-width;
@@ -291,7 +291,7 @@ $glass-color: #888;
     .bubble-3{
       width: 10px;
       height: 10px;
-      @include box-sizing(border-box);
+      box-sizing: border-box;
       border: 5px solid white;
       border-radius: 20px;
       left: 20px;
@@ -330,7 +330,7 @@ $glass-color: #888;
         position: absolute;
         top: 0;
         left: 2px;
-        @include rotate(45deg);
+        transform: rotate(45deg);
       }
 
       .cube-2{
@@ -338,14 +338,14 @@ $glass-color: #888;
         border-width: 15px;
         left: 25px;
         top: 2px;
-        @include rotate(5deg);
+        transform: rotate(5deg);
       }
 
       .cube-3{
         width: 25px;
         border-width: 25px;
         left: 45px;
-        @include rotate(65deg);
+        transform: rotate(65deg);
       }
 
     }
@@ -456,8 +456,8 @@ $glass-color: #888;
 
     .sugars{
       left: 10px;
-      @include scale(0.75);
-      @include transform-origin(0,0);
+      transform: scale(0.75);
+      transform-origin: 0,0;
     }
 
     .handle{

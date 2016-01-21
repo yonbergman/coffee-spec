@@ -106,10 +106,10 @@
     float: left;
     width: 50px;
     height: 65px;
-    @include scale(0.3);
+    transform: scale(0.3);
   }
 }
 
 .inner-content{
-  @include min-height(190px);
+  min-height: 190px;
 }

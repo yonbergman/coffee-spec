@@ -4,7 +4,7 @@
     width: 100px;
     margin-right: 5px;
     text-align: right;
-    @include inline-block;
+    display: inline-block;
   }
 }
 
@@ -31,7 +31,7 @@ form{
 }
 
 .drink-form{
-  @include min-height(150px);
+  min-height: 150px;
   input, select {
     width: 200px;
     box-sizing: border-box;
