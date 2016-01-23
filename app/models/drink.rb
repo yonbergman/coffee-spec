@@ -4,7 +4,7 @@ class Drink < ActiveRecord::Base
   belongs_to :poster
   has_one :user, :through => :poster
 
-  enum :kind, [:coffee, :iced_coffee, :espresso, :turkish, :tea, :water, :soda]
+  enum :kind, [:coffee, :iced_coffee, :espresso, :turkish, :tea, :water, :soda, :energy_drink]
   enum_accessor :milk_amount, [:none, :a_bit, :a_third, :a_lot]
   enum_accessor :milk_type, [:regular, :slim, :soy, :almond, :rice, :hazelnut]
   enum_accessor :sugar_amount, [0, 0.5, 1, 1.5, 2, 2.5]
@@ -25,6 +25,7 @@ class Drink < ActiveRecord::Base
       :tea => [:tea_type, :sugar_amount, :sugar_type],
       :water => [:water_type],
       :soda => [:soda_type],
+      :energy_drink => [],
   }
 
   scope :ordered, lambda { order(:id) }

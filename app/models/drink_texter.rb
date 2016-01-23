@@ -14,6 +14,7 @@ class DrinkTexter
       when :tea then tea_text
       when :water then water_text
       when :soda then soda_text
+      when :energy_drink then 'An Energy Drink'
       else "A #{drink.kind}"
     end
   end

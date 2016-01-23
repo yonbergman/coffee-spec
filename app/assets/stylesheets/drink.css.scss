@@ -514,4 +514,26 @@ $glass-color: #888;
     &.dharkan   { @include pod(#2E4D4E); }
 
   }
+
+  &.energy_drink {
+    width: 80px;
+    left: 10px;
+    border-radius: 10px;
+    .liquid {
+      border-radius: 0px;
+      left: 0;
+      border-color: blue;
+      border-left: 50px solid rgb(205, 248, 255);
+      &:after {
+        content: '';
+        width: 20px;
+        border-bottom: 45px solid white;
+        border-radius: 25px;
+        position: absolute;
+        left: 0;
+        top: 55px;
+      }
+    }
+
+  }
 }
