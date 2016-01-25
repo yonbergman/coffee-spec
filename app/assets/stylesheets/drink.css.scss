@@ -84,6 +84,7 @@ $glass-color: #888;
       $earl-grey-tea-color: #b96044;
       $herbal-tea-color: #eb9696;
       $green-tea-color: #abc564;
+      $black-tea-color: #753e3c;
 
       &, &.earl_grey {
         border-color: $earl-grey-tea-color;
@@ -98,6 +99,11 @@ $glass-color: #888;
       &.green{
         border-color: $green-tea-color;
         background: $green-tea-color;
+      }
+
+      &.english_breakfast {
+        border-color: $black-tea-color;
+        background: $black-tea-color;
       }
 
     }
