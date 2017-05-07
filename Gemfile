@@ -19,6 +19,8 @@ gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 # gem 'debugger', group: [:development, :test]
 gem 'powder'
 
